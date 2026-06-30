@@ -1,0 +1,1258 @@
+/* Navbar links-ku */
+
+@font-face {
+  font-family: 'Bank Gothic Light';
+  /* ../ goes up to assets, then we enter bankgothic folder */
+  src: url('../../../assets/bankgothic/Bank Gothic Light Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.blog .text{
+   font-family: 'Bank Gothic Light', sans-serif !important;
+    text-transform: uppercase;
+    font-size:8px 
+
+}
+
+.nav-item {
+    font-family: 'Bank Gothic Light', sans-serif !important;
+    text-transform: uppercase;
+}
+
+.blog {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    /* Responsive Widths */
+    width:250px; 
+    min-height: 45px;
+    overflow: hidden; 
+    transition: transform 0.9s ease !important;
+    z-index: 999;
+    border-radius:4px;
+    top:35%;
+    
+}
+
+.blog:hover{
+
+  transform:scale(1.1);
+}
+
+/* THE ARROW (Left to Right Slide) */
+.blog .arrow {
+    position: absolute;
+    left: 2PX;
+    background: #000;
+    color: #fff;
+    width: 18%; 
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5px;
+    /* Smooth Cubic-Bezier Transition */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease !important;
+    z-index: 2;
+}
+
+/* THE TEXT (Right to Left Slide) */
+.blog .text {
+    width: 100%;
+    text-align: center;
+    padding-left: 20% !important; /* Arrow space-ai thavirkka */
+    font-size: 9px;
+    background:#fff;
+    color:#000;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* --- THE HOVER MOTION --- */
+/* Arrow moves to the very end of the button */
+.blog:hover .arrow {
+    transform: translateX(460%); /* 200px button -n 50px arrow = 150px shift */
+    transition:all 0.8s !important;
+}
+
+/* Text moves to the left side */
+.blog:hover .text {
+    transform: translateX(-45px); 
+    transition:all 0.8s !important;
+}
+
+@media(max-width:2560px){
+  .blog {
+        top:8%;
+        
+        right:5%;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .blog {
+        top:8%;
+        width: 200px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 50px;
+        right:5%;
+    }
+    .blog .arrow {
+        width: 42px;
+    }
+    .blog .text {
+        font-size: 7px;
+        padding-left: 35px;
+    }
+    .blog:hover .arrow {
+        transform: translateX(370%); /* 170px - 42px */
+    }
+    .blog:hover .text {
+        transform: translateX(-35px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .blog {
+        top:150%;
+        right:3%;
+        width: 180px; /* Smallest screens-kku button size kuraiyum */
+        height: 4vh;
+    }
+    .blog .arrow {
+        width: 42px;
+    }
+    .blog .text {
+        font-size: 7px;
+        padding-left:50px !important;
+    }
+    .blog:hover .arrow {
+        transform: translateX(370%); /* 170px - 42px */
+    }
+    .blog:hover .text {
+        transform: translateX(-35px);
+    }
+} 
+@media (max-width: 1024px) {
+    .blog {
+        top:150%;
+        right:3%;
+        width: 200px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 5vh;
+    }
+    .blog .arrow {
+        width: 42px;
+    }
+    .blog .text {
+        font-size: 7px;
+        padding-left: 28px;
+    }
+    .blog:hover .arrow {
+        transform: translateX(380%); /* 170px - 42px */
+    }
+    .blog:hover .text {
+        transform: translateX(-35px);
+    }
+}
+
+@media(max-width:768px){
+  .blog {
+        top:100%;
+        right:3% !important;
+        width: 200px !important ; /* Smallest screens-kku button size kuraiyum */
+        height: 5vh;
+    }
+    .blog .arrow {
+        width: 42px;
+    }
+    .blog .text {
+        font-size: 6px;
+        padding-left: 35px;
+    }
+    .blog:hover .arrow {
+        transform: translateX(380%); /* 170px - 42px */
+    }
+    .blog:hover .text {
+        transform: translateX(-35px);
+    }
+}
+/* Mobile Responsiveness (For Phone Screens) */
+@media (max-width: 576px) {
+    .blog {
+        width: 150px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 5vh;
+        top:58%;
+    }
+    .blog .arrow {
+        width: 20%;
+    }
+    .blog .text {
+        font-size: 4px;
+    }
+    .blog:hover .arrow {
+        transform: translateX(119px); /* 170px - 42px */
+    }
+    .blog:hover .text {
+        transform: translateX(-35px);
+    }
+}
+
+
+
+/* --- NECESSARY PERFORMANCE ADDITIONS --- */
+/* --- 1. DEFAULT STATE (Top of page) --- */
+/* --- PERFORMANCE OPTIMIZATIONS --- */
+.nav-white-container, .nav-item, .mars-navbar-main, .is-scrolled .nav-links-list .blog{
+  /* GPU acceleration hint */
+  will-change: transform, background-color, opacity;
+  /* Specific transitions instead of 'all' to prevent lag */
+  transition: 
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.8s ease,
+    width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.8s ease,
+    border-radius 0.8s ease !important;
+}
+
+/* --- YOUR ORIGINAL DESIGN START --- */
+
+
+
+/* Layout Base */
+.mars-navbar-main {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  height: 15%;
+  width: 100%;
+  z-index: 1500;
+  display: flex;
+  justify-content: center;
+}
+
+.is-scrolled .nav-white-container .nav-item:hover{
+  color:#e67e22 !important;
+}
+
+.nav-flex-wrapper {
+  width: 95%;
+  display: flex;
+  height: 100%;
+  margin: 10px !important;
+  align-items: center;
+  position:relative;
+  justify-content: space-between;
+  z-index: 1500;
+}
+
+/* WHITE NAVBAR BOX */
+.nav-white-container {
+  height: 70% !important;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  flex: 0 1 auto;
+  z-index: 1500;
+}
+
+/* SCROLLED STATE - CAPSULE TRANSITION */
+.is-scrolled .nav-white-container {
+  background: black !important;
+  width: 50%;
+  height: 150px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+/* Logo & Items */
+.logo-main-img { height: 180px; width: auto; }
+.nav-item {
+  text-decoration: none;
+  font-size: 29px; /* 30px -> 29px */
+  font-weight: 900;
+  color: #000;
+}
+.nav-item:hover{
+  color:#e67e22 !important;
+}
+
+.is-scrolled .nav-item { color: #fff; }
+
+/* ... Rest of your original Media Queries (1440px, 1024px, 560px) ... */
+/* NOTE: Apply the same 'is-scrolled' logic and width changes to them */
+
+@media(min-width:2560px){
+.nav-item {
+  color: black !important;
+  font-size: 15px !important; /* 16px -> 15px */
+}
+.logo-main-img {
+  filter: none !important;
+}
+
+/* --- 2. SCROLLED THEME INVERSION --- */
+
+/* Scrolled + Black BG Section = White Capsule */
+.is-scrolled .theme-white-nav .nav-white-container {
+  background: black !important;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 80px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled .theme-white-nav .nav-item {
+  color: white !important;
+}
+
+/* Scrolled + White BG Section = Black Capsule */
+.is-scrolled.theme-black-nav .nav-white-container {
+  background: white !important;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 80px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.is-scrolled.theme-black-nav .nav-item {
+  color: black !important;
+}
+
+/* Smooth transition force */
+.nav-white-container,
+.nav-item {
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Layout Base */
+.mars-navbar-main {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  height: 180px;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  display:flex;
+  justify-content:space-around;
+}
+
+.is-scrolled {
+  background-color: #0000 !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.nav-flex-wrapper {
+  width: 95%;
+  display: flex;
+  
+  margin: 10px !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* WHITE NAVBAR BOX (Image 1 Look) */
+.nav-white-container {
+  height: 80% !important;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 0 1 auto;
+  margin-right: auto; /* Pushes external button to the right */
+}
+
+/* SCROLLED BLACK CAPSULE (Image 2 Look) */
+.is-scrolled .nav-white-container {
+  background: black !important;
+  width: 50%;
+  flex: 0 0 auto;
+  height: 150px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled .nav-links-area {
+  width: 100%;
+}
+
+.is-scrolled .nav-links-lists {
+  width: 100%;
+  display: flex;
+  justify-content: space-around !important;
+}
+
+/* Sections Alignment */
+.nav-logo-area {
+  flex: 0 0 auto;
+  margin-right: 40px;
+}
+.nav-links-area {
+  display: flex;
+  justify-content: center;
+}
+
+/* Item Styling */
+.logo-main-img {
+  height: 140px;
+  width: auto;
+}
+.nav-links-list {
+  display: flex;
+  gap: 35px;
+  flex: flex-wrap;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 29px; /* 30px -> 29px */
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.is-scrolled .nav-item {
+  color: #fff;
+}
+
+
+/* EXTERNAL BUTTON STYLE */
+.build-action-btn {
+  background: black;
+  color: white;
+  border: none;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-icon {
+  background: white;
+  color: black;
+  width: 100px;
+  font-size: 22px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.btn-label {
+  padding: 0 20px;
+  font-size: 22px;
+  font-weight: 800;
+}
+.is-scrolled.theme-white-nav .nav-white-container {
+  background: black !important;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 80px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled.theme-white-nav .nav-item {
+  color: white !important;
+}
+
+/* Scrolled + White BG Section = Black Capsule */
+.is-scrolled.theme-black-nav .nav-white-container {
+  background: white !important;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 80px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled.theme-black-nav .nav-item {
+  color: black !important;
+}
+
+.is-scrolled .nav-white-container {
+  background: black !important;
+  width: 60% !important;
+  flex: 0 0 auto;
+  height: 150px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
+
+/* --- NECESSARY PERFORMANCE ADDITIONS --- */
+/* --- 1. DEFAULT STATE (Top of page) --- */
+@media(max-width:2560px){
+
+.nav-white-container {
+  background: white !important;
+  max-width: 100%;
+  height: 75px;
+}
+.nav-item {
+  color: black !important;
+  font-size: 17px !important; /* 18px -> 17px */
+}
+.logo-main-img {
+  filter: none !important;
+}
+
+/* --- 2. SCROLLED THEME INVERSION --- */
+
+/* Scrolled + Black BG Section = White Capsule */
+.is-scrolled.theme-white-nav .nav-white-container {
+  background: black !important;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 80px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled.theme-white-nav .nav-item {
+  color: white !important;
+  font-size: 15px; /* 16px -> 15px */
+}
+
+/* Scrolled + White BG Section = Black Capsule */
+.is-scrolled.theme-black-nav .nav-white-container {
+  background: white !important;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 80px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled.theme-black-nav .nav-item {
+  color: black !important;
+
+}
+
+/* Smooth transition force */
+.nav-white-container,
+.nav-item {
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Layout Base */
+.mars-navbar-main {
+  position: fixed;
+  left: 0;
+  top:1px !important;
+  height: 180px!important;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  display:flex;
+  justify-content:space-around;
+}
+
+.is-scrolled{
+  background-color: #0000 !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.nav-flex-wrapper {
+  width: 100%;
+  max-width: 2560px;
+  display: flex;
+  height:150px;
+  margin: 10px !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* WHITE NAVBAR BOX (Image 1 Look) */
+.nav-white-container {
+  width:70%!important;
+  height: 60% !important;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 0 1 auto;
+  margin-right: auto; /* Pushes external button to the right */
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 13px; /* 14px -> 13px */
+  font-weight: 900;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+/* SCROLLED BLACK CAPSULE (Image 2 Look) */
+.is-scrolled .nav-white-container {
+  background: black !important;
+  width: 60% !important;
+  flex: 0 0 auto;
+  height: 150px !important;
+  border-radius: 10px;
+  padding: 0 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.is-scrolled .nav-links-area {
+  width: 100%;
+}
+
+.is-scrolled .nav-links-lists {
+  width: 100%;
+  display: flex;
+  justify-content: space-around !important;
+}
+
+/* Sections Alignment */
+.nav-logo-area {
+  flex: 0 0 auto;
+}
+.nav-links-area {
+  display: flex;
+  justify-content: center;
+}
+/* Item Styling */
+.logo-main-img {
+  height: auto !important;
+  width: 180px !important;
+}
+.nav-links-list {
+  display: flex;
+  gap: 30px;
+  flex: flex-wrap;
+}
+.is-scrolled .nav-item {
+  color: #fff;
+}
+.active-text {
+  color: #e67e22;
+}
+
+/* EXTERNAL BUTTON STYLE */
+.build-action-btn {
+  padding:0.25rem !important;
+  background: black;
+  color: white;
+  border: none;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-icon {
+  background: white;
+  color: black;
+  width: 100px !important;
+  font-size: 22px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.btn-label {
+  padding: 0 20px;
+  font-size: 22px !important;
+  font-weight: 800;
+}
+}
+
+@media (max-width: 1440px) {
+  .external-button-box {
+    height:85px !important;
+  }
+  .nav-flex-wrapper {
+  width: 100% !important;
+  display: flex;
+  height: 140px !important;
+  padding-bottom: 10px !important;
+  align-items: center;
+  justify-content: space-around !important;
+}
+  .btn-icon {
+  width: 100px;
+  font-size: 16px !important;
+  height: 100%;
+}
+  .nav-links-list {
+  display: flex;
+  gap: 20px !important;
+  flex: flex-wrap;
+}
+  .btn-label {
+  font-size: 11px !important;
+}
+
+  .nav-item {
+    font-size: 15px !important; /* 16px -> 15px */
+  }
+  .is-scrolled .nav-item{
+    font-size: 12px !important; /* 13px -> 12px */
+  }
+
+  .mars-navbar-main {
+    top: 0;
+  }
+
+  .nav-flex-wrapper {
+    width: 100% !important;
+    padding: 0 25px;
+    justify-content: space-between;
+  }
+
+  .is-scrolled .theme-white-nav .nav-white-container {
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 80px !important;
+    border-radius: 10px;
+    padding: 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .is-scrolled .theme-white-nav .nav-item {
+    color: white !important;
+  }
+
+  /* Scrolled + White BG Section = Black Capsule */
+  .is-scrolled  .theme-black-nav .nav-white-container {
+    background: white !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 80px !important;
+    border-radius: 10px;
+    padding: 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-scrolled .theme-black-nav .nav-item {
+    color: black !important;
+  }
+
+  .nav-white-container {
+    background: #ffff;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row !important;
+    padding: 0;
+    margin-right: 0;
+    height: 80% !important;
+    padding:10px 10px !important;
+    width: 100% !important;
+  }
+  /* SCROLLED BLACK CAPSULE (Image 2 Look) */
+  .is-scrolled .nav-white-container {
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 60px !important;
+    border-radius: 10px;
+    padding: 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-scrolled .nav-links-area {
+    width: 100%;
+  }
+
+  .is-scrolled .nav-links-lists {
+    width: 100%;
+    display: flex;
+    justify-content: space-around !important;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+  }
+
+  .is-scrolled .line {
+    background: white;
+    width: 22px;
+  }
+  .logo-main-img {
+    height: 100px;
+    width: 150px  !important;
+  } 
+  /* EXTERNAL BUTTON STYLE */
+.build-action-btn {
+  background: black;
+  color: white;
+  border: none;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-icon {
+  background: white;
+  color: black;
+  width: 100px;
+  font-size: 22px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.btn-label {
+  padding: 0 20px;
+  font-size: 22px;
+  font-weight: 800;
+}
+}
+
+/* MOBILE DESIGN (Image 3 & 4 Alignment) */
+@media (max-width: 1024px) {
+  .truck-foreground{
+    top:43% !important;
+  }
+
+  .nav-item{
+    font-size: 13px !important; /* 14px -> 13px */
+  }
+  .mars-navbar-main {
+    top: 0;
+  }
+
+  .nav-flex-wrapper {
+    width: 100% !important;
+    height:15vh !important;
+    padding: 0 25px;
+    display:column !important;
+    justify-content: space-between;
+  }
+
+  .nav-white-container {
+    background: #ffff;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row!important;
+    padding: 0;
+    margin-right: 0;
+    height: auto;
+    padding: 10px;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+  }
+  .is-scrolled .nav-white-container {
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 60px !important;
+    border-radius: 10px;
+    padding: 0 30px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-scrolled .nav-item{
+     font-size: 7px !important; /* 8px -> 7px */
+  }
+
+  .is-scrolled .line {
+    background: white;
+    width: 22px;
+  }
+   .is-scrolled .theme-white-nav .nav-white-container {
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 100px !important;
+    border-radius: 10px;
+    padding: 0 30px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .is-scrolled .theme-white-nav .nav-item {
+    color: white !important;
+  }
+
+  /* Scrolled + White BG Section = Black Capsule */
+  .is-scrolled  .theme-black-nav .nav-white-container {
+    background: white !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 100px !important;
+    border-radius: 10px;
+    padding: 0 40px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-scrolled .theme-black-nav .nav-item {
+    color: black !important;
+    font-size: 7px !important; /* 8px -> 7px */
+  }
+  
+}
+
+/* MOBILE DESIGN (Image 3 & 4 Alignment) */
+@media (max-width: 788px) {
+  
+  .external-button-box{
+    display:none !important;
+  }
+  .mars-navbar-main {
+    top: 0;
+  }
+
+  .nav-flex-wrapper {
+    width: 100%;
+    padding: 0px !important;
+    justify-content: space-between;
+    height:15vh !important;
+  }
+
+  .nav-white-container {
+    background: #ffff;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row !important;
+  
+    
+    margin-right:20px !important; 
+    height: auto;
+  }
+  .is-scrolled .nav-white-container{
+    margin-left:5px !important;
+    width:90% !important; 
+  }
+  
+  .scrolled .nav-white-container .nav-item{
+    font-size: 9px !important; /* 10px -> 9px */
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+  }
+  .nav-item{
+    font-size: 11px !important; /* 12px -> 11px */
+  }
+
+  .is-scrolled .line {
+    background: white;
+    width: 22px;
+  }
+
+   .is-scrolled .line {
+    background: white;
+    width: 22px;
+  }
+   .is-scrolled .theme-white-nav .nav-white-container {
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 100px !important;
+    border-radius: 10px;
+    padding: 0 40px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .is-scrolled .theme-white-nav .nav-item {
+    color: white !important;
+    font-size: 7px !important; /* 8px -> 7px */
+  }
+
+  /* Scrolled + White BG Section = Black Capsule */
+  .is-scrolled  .theme-black-nav .nav-white-container {
+    background: white !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 100px !important;
+    border-radius: 10px;
+    padding: 0 40px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-scrolled .theme-black-nav .nav-item {
+    color: black !important;
+    font-size: 7px !important; /* 8px -> 7px */
+  }
+  .nav-logo-area{
+    padding:none !important; 
+  }
+}
+
+/* --- UPDATED MOBILE DESIGN (560px and below) --- */
+@media (max-width: 578px) {
+  
+
+  .mars-navbar-main {
+    top: 0;
+    height: auto !important; /* Content-ku etha maari height eduthukum */
+  }
+
+  .nav-flex-wrapper {
+    width: 100%;
+    left:10px;
+    padding: 0 !important;
+    flex-direction: column !important; /* Stack vertically */
+    height: auto !important;
+    align-items:end !important;
+  }
+
+  /* Logo Area - Black Background requirement */
+  .nav-logo-area {
+    background-color: #0000 !important; /* Pure Black Background */
+    width: 100% !important;
+    height:100% !important;
+    display: flex;
+    justify-content: center;
+    margin-right: 0 !important;
+  }
+
+  .logo-main-img {
+    height: 60px !important; /* Mobile-la logo size adjust panna */
+    width: 140px !important;
+    
+  }
+
+  /* Nav Container and Links */
+  .nav-white-container {
+    background: transparent !important; /* Wrapper transparent-a irukatum */
+    display: flex;
+    flex-direction: column !important; 
+    width: 100% !important;
+    padding: 0 !important;
+    box-shadow: none;
+    background:#0000 !important;
+  }
+  .is-scrolled .nav-white-container {
+    background: transparent !important; /* Wrapper transparent-a irukatum */
+    display: flex;
+    flex-direction: column !important; 
+    width: 100% !important;
+    padding:0px!important;
+    box-shadow: none;
+    background:#0000 !important;
+  }
+
+  .is-scrolled .nav-flex-wrapper{
+    left:1px;
+  }
+      .is-scrolled.theme-white-nav .nav-white-container{
+        background:#0000 !important;
+      
+      }
+      .is-scrolled.theme-black-nav .nav-white-container{
+        background:#0000 !important;
+      }
+    
+      .is-scrolled.theme-white-nav .nav-links-list{
+        background:#000 !important;
+        
+      }
+        .is-scrolled .theme-white-nav .nav-item {
+        color: white !important;
+       } 
+      .is-scrolled.theme-black-nav .nav-links-list{
+        background:#fff !important;
+      }
+        .is-scrolled .theme-black-nav .nav-item {
+    color: black !important;
+  }
+
+  .nav-links-area {
+    width: 100% !important;
+    margin: 0 !important;
+    
+  }
+
+  .nav-links-list {
+    background: #ffffff !important; /* Links white background-la keela varum */
+    display: flex;
+    justify-content: space-around !important;
+    align-items:center !important;
+    gap: 15px !important;
+    flex-wrap: wrap;
+    height:8vh !important;
+    margin-left:10px;
+    margin-right:10px;
+    width: 100% !important;
+    border-radius:10px !important;
+  }
+  .is-scrolled .nav-links-list {
+    background: #000 !important; /* Links white background-la keela varum */
+    padding: 10px 10px !important;
+    height:100% !important;
+    display: flex;
+    justify-content: space-around !important;
+    gap: 10px !important;
+    height:40px !important;
+    flex-wrap: wrap;
+    width: 100% !important;
+    border-radius:10px !important;
+    transition:
+  }
+  
+  .is-scrolled.theme-white-nav .nav-links-list{
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 50px !important;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px !important;
+  }
+
+  .is-scrolled.theme-white-nav .nav-item {
+    color: white !important;
+    font-size: px !important; /* 7px -> 6px */
+  }
+
+  /* Scrolled + White BG Section = Black Capsule */
+  .is-scrolled.theme-black-nav .nav-links-list{
+    background: white !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 50px !important;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px !important;
+  }
+  .is-scrolled.theme-black-nav .nav-item {
+    color: black !important;
+    font-size: 8px !important; /* 7px -> 6px */
+  }
+
+  .nav-item {
+    font-size: 8px !important; /* 9px -> 8px */
+    color: #000 !important;
+  }
+  
+
+  /* Scrolled State adjustments */
+  .is-scrolled .nav-white-container {
+    width: 95% !important;
+    background:#0000 !important;
+  }
+
+  .is-scrolled .nav-logo-area {
+    border-radius: 10px 10px 0 0; /* Scrolled-la irukum pothu round panna */
+  }
+  
+  .is-scrolled .nav-links-list {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media(max-width:330px){
+ .is-scrolled.theme-white-nav .nav-links-list{
+    background: black !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 30px !important;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .is-scrolled.theme-white-nav .nav-item {
+    color: white !important;
+    font-size: px !important; /* 6px -> 5px */
+  }
+
+  /* Scrolled + White BG Section = Black Capsule */
+  .is-scrolled.theme-black-nav .nav-links-list{
+    background: white !important;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 30px !important;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .is-scrolled.theme-black-nav .nav-item {
+    color: black !important;
+    font-size: 5px !important; /* 6px -> 5px */
+  }
+   .nav-item {
+    font-size: 7px !important; /* 8px -> 7px */
+    color: #000 !important;
+  }
+}
+
+
+/* --- HEIGHT REDUCTION (Add this at the very bottom of your CSS file) --- */
+
+.mars-navbar-main {
+    height: 80px !important; /* Mela iruntha 180px-ai 80px-ku kuraichiruken */
+}
+
+.nav-flex-wrapper {
+    height: 60px !important; /* Navbar content-oda height */
+    margin-top:30px !important;/* margin: 30px !important;  Margin-aiyum kuraichiruken */
+}
+
+.nav-white-container {
+    height: 80px !important; /* Box height */
+}
+
+/* Mobile-la height innum kuraiya: */
+@media (max-width: 768px) {
+    .mars-navbar-main {
+        height: 60px !important;
+    }
+    .nav-flex-wrapper {
+        height: 50px !important;
+    }
+}

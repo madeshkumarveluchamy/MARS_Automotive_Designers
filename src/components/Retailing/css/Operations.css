@@ -1,0 +1,236 @@
+/* ==========================================================================
+   CARGO CANVAS DESIGN SYSTEM BASELINES
+   ========================================================================== */
+.cargo-solutions-section {
+  padding: 3rem 0;
+  width: 100vw !important;
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+inter-font{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cargo-fluid-holder {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.inter-font {
+  font-family: "Inter", sans-serif;
+}
+
+/* ==========================================================================
+   TOP CONTAINMENT SPECIFICATIONS TYPOGRAPHY
+   ========================================================================== */
+.cargo-top-header {
+  max-width: 820px;
+}
+
+.cargo-main-headline {
+  font-size: 32px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+.cargo-mini-badge {
+  font-size: 12px;
+  color: #e38524; /* Signature industrial brand orange */
+  letter-spacing: 0.15em;
+}
+
+.cargo-top-subdesc {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 780px;
+}
+
+/* ==========================================================================
+   CENTER SECTION: RUGGED IMAGE BOX & VALUE CHECKS LIST
+   ========================================================================== */
+.cargo-showcase-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Perfect balanced landscape container matches snapshot layout */
+  background-color: #f7f7f7;
+}
+
+.why-choose-title {
+  font-size: 24px;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
+.why-choose-subtext {
+  font-size: 13.5px;
+}
+
+.cargo-features-checklist {
+  list-style: none;
+}
+
+.cargo-features-checklist li {
+  font-size: 13.5px;
+  color: #2c2c2c;
+}
+
+.check-marker-icon {
+  color: #e38524; /* Orange check indicators bullets */
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   THE BRAND CAPSULE BUTTON PILL WITH OVERLAP CIRCLE SLIDE
+   ========================================================================== */
+.cargo-retail-sales-btn {
+  background-color: #e38524 !important; /* Brand dynamic orange shell padding block */
+  color: #ffffff !important;
+  border: 1px solid #e38524 !important;
+  border-radius: 30px !important; /* Capsule shape outer limit layout bounds */
+  padding: 8px 8px 8px 24px !important;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cargo-arrow-circle {
+  width: 34px;
+  height: 34px;
+  background-color: #ffffff; /* Symmetrical crisp white inside background circle sphere */
+  color: #e38524;
+  border-radius: 50%;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.cargo-retail-sales-btn:hover {
+  background-color: #111111 !important; /* Switches outline parameters straight to deep slate pitch black on mouse triggers */
+  border-color: #111111 !important;
+}
+
+.cargo-retail-sales-btn:hover .cargo-arrow-circle {
+  color: #111111;
+  transform: translateX(3px); /* Subtle premium arrow push forward nudge interaction */
+}
+
+/* ==========================================================================
+   BOTTOM WORKFLOW GRAPHICS PIPELINE SELECTION CARD GRIDS
+   ========================================================================== */
+.cargo-bottom-workflow-grid {
+  border-color: #eeeeee !important;
+}
+
+/* Symmetrical index geometric circle layouts markers specifications block code */
+.workflow-number-badge-sphere {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #dcdcdc; /* Balanced light grey geometric profile boundary lines layer */
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.inner-badge-dot-index {
+  font-size: 11px;
+  font-weight: 700;
+  color: #777777;
+  font-family: monospace;
+}
+
+.workflow-step-title {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #111111;
+}
+
+.workflow-step-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 90%;
+}
+
+/* Micro interaction animation triggers linking cards state parameters toggles layout */
+.workflow-step-card:hover .workflow-number-badge-sphere {
+  border-color: #e38524;
+  background-color: rgba(227, 133, 36, 0.05); /* Premium faint orange splash profile mapping bounds */
+}
+
+/* ==========================================================================
+   MONITOR SCALING HIGHER REFRESH RESOLUTION VIEWPORTS (2560px+)
+   ========================================================================== */
+@media (min-width: 2560px) {
+  .cargo-fluid-holder { max-width: 2100px; }
+  .cargo-main-headline { font-size: 48px !important; }
+  .why-choose-title { font-size: 32px; }
+  .cargo-retail-sales-btn { font-size: 15px; padding: 12px 12px 12px 32px !important; }
+  .cargo-arrow-circle { width: 42px; height: 42px; font-size: 15px; }
+  .workflow-step-title { font-size: 18px; }
+  .workflow-step-desc { font-size: 14px; }
+}
+
+/* Medium Desktop configurations screen safety tracking layer link maps */
+@media (min-width: 1440px) and (max-width: 2559.98px) {
+  .cargo-fluid-holder { max-width: 1320px; }
+}
+
+/* ==========================================================================
+   MOBILE & VIEWPORTS ADAPTIVE OVERRIDES MATRIX (< 991px / PHONES VIEWS)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .cargo-solutions-section {
+    padding: 4rem 0;
+  }
+  
+  /* Centers typography structure elements smoothly on small screens layout blocks */
+  .cargo-top-header {
+    text-align: center !important;
+    padding: 0 10px;
+  }
+  
+  .cargo-main-headline {
+    font-size: 24px !important;
+  }
+
+  .cargo-middle-showcase {
+    text-align: center !important;
+  }
+
+  .cargo-features-checklist {
+    align-items: center !important; /* Pushes list bullets into clear symmetric mobile alignment grids center */
+  }
+
+  .cargo-content-engine-col {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cargo-bottom-workflow-grid {
+    padding-top: 2rem !important;
+  }
+
+  .workflow-step-card-col {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 1.5rem;
+  }
+
+  .workflow-step-card-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+.hanken-grotesk-font {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+.manrope-font {
+  font-family: "Manrope", sans-serif;
+}

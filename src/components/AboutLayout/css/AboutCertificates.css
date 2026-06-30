@@ -1,0 +1,42 @@
+.cert-section {
+  background-color: #0a0a0a; /* Deep black/grey background */
+}
+
+.cert-subtitle {
+  color: #c4711e; /* Theme Orange */
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  opacity: 0.8;
+}
+
+/* The Bordered Box Styling */
+.cert-box {
+  border: 1px solid #1a1a1a; /* Very dark border */
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.4s ease;
+  min-height: 120px;
+}
+
+/* Hover Effect: Border lights up slightly */
+.cert-box:hover {
+  background: rgba(196, 113, 30, 0.05); /* Very subtle orange tint */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cert-text {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  opacity: 0.6; /* Faded look like the image */
+  transition: opacity 0.3s ease;
+}
+
+.cert-box:hover .cert-text {
+  opacity: 1; /* Becomes bright on hover */
+}

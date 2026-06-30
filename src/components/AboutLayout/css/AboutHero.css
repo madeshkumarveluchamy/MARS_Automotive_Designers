@@ -1,0 +1,40 @@
+/* Custom CSS for MARS Project Hero Section */
+
+.main-titles {
+  /* This creates the massive text size seen in your image */
+  font-size: clamp(3rem, 10vw, 8.5rem); 
+  line-height: 0.85;
+  letter-spacing: -0.05em; /* This "tightens" the letters like the image */
+  font-family: 'Inter', sans-serif; /* Use a thick sans-serif font */
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 1);
+}
+
+.subtitle-text {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  letter-spacing: 0.4em; /* This "spreads" the subtitle letters */
+  color: #a0a0a0 !important; /* Muted gray color */
+}
+
+/* Optional: Adding a subtle text shadow to make it pop against the background */
+
+@media(max-width:1400px){
+  .main-titles{
+    font-size:9vw;
+  }
+}
+@media(max-width:1200px){
+  .main-titles{
+    font-size:8vw;
+  }
+}
+@media(max-width:420px){
+  .main-titles{
+    font-size:9vw;
+  }
+}
+
+@media(max-width:520px){
+  .Abouthero{
+    height:75vh !important;
+  }
+}

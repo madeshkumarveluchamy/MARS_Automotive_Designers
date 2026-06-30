@@ -1,0 +1,653 @@
+ { img: "/brighttruckbackground.png", text: "ADVANCED CHASSIS" },
+    { img: "/crosswelding.png", text: "PRECISION WELDING" },
+    { img: "/heropagetruck.png", text: "DURABLE BODIES" },
+    { img: "/truck4.png", text: "SAFETY FIRST" },
+    { img: "/truck5.png", text: "INNOVATIVE DESIGN" },
+    { img: "/truck6.png", text: "QUALITY ASSURED" },
+    { img: "/truck7.png", text: "MODERN TECHNOLOGY" },
+    { img: "/truck8.png", text: "EXPERT ENGINEERING" }
+
+
+
+
+ { 
+      title: "VISION", 
+      desc: "WE DON'T JUST BUILD VEHICLES; WE ENGINEER ASSETS. OUR PHILOSOPHY IS ROOTED IN THE UNCOMPROMISING STRENGTH OF STEEL AND THE PRECISION OF MODERN ROBOTICS.",
+      image: visionImg
+    },
+    { 
+      title: "MISSION", 
+      desc: "To redefine industrial mobility through rigorous fabrication standards and modular design architecture that withstands the harshest environments on Earth.",
+      image: missionImg
+    },
+    { 
+      title: "OUR VALUES", 
+      desc: "Structural integrity, absolute transparency in technical specs, and a relentless pursuit of engineering perfection without aesthetic compromise.",
+      image: valuesImg
+    }
+
+
+
+/* Layout Base */
+.mars-navbar-main {
+    position: fixed;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    background-color:#fff !important
+}
+
+.is-scrolled{
+    background-color:#0000 !important;
+    transition:none !important;
+}
+
+.nav-flex-wrapper {
+    width: 95%;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+/* WHITE NAVBAR BOX (Image 1 Look) */
+.nav-white-container {
+    height: 85px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 0 1 auto;
+    margin-right: auto; /* Pushes external button to the right */
+}
+
+/* SCROLLED BLACK CAPSULE (Image 2 Look) */
+.is-scrolled .nav-white-container {
+    background: black !important;
+    width: auto;
+    flex: 0 0 auto;
+    height: 60px;
+    border-radius: 50px;
+    padding: 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sections Alignment */
+.nav-logo-area { 
+    flex: 0 0 auto; 
+    margin-right: 40px; 
+}
+.nav-links-area { 
+    display: flex; 
+    justify-content: center; 
+}
+
+/* Item Styling */
+.logo-main-img { height: 50px; width: auto; }
+.nav-links-list { display: flex; gap: 35px; }
+
+.nav-item {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: 0.5px;
+}
+
+.is-scrolled .nav-item { color: #fff; }
+.active-text { color: #E67E22; }
+
+/* EXTERNAL BUTTON STYLE */
+.build-action-btn {
+    background: black;
+    color: white;
+    border: none;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-icon {
+    background: white;
+    color: black;
+    width: 45px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.btn-label {
+    padding: 0 20px; font-size: 11px; font-weight: 800;
+}
+
+/* MOBILE DESIGN (Image 3 & 4 Alignment) */
+@media (max-width: 1024px) {
+    .hide-mobile { display: none; }
+    
+    .mars-navbar-main {
+        top: 0;
+        padding: 15px 0;
+    }
+
+    .nav-flex-wrapper {
+        width: 100%;
+        padding: 0 25px;
+        justify-content: space-between;
+    }
+
+    .nav-white-container {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-right: 0;
+        height: auto;
+    }
+
+    /* Mobile Hamburger initial */
+    .mobile-nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 1001;
+    }
+
+    .line { width: 30px; height: 3px; background: black; transition: 0.3s; }
+
+    /* MOBILE SCROLLED: Black Circle (Image 4) */
+    .is-scrolled .mobile-nav-toggle {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        background: black;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .is-scrolled .line { background: white; width: 22px; }
+    
+    .is-scrolled .nav-white-container {
+        display: none; /* Mobile scrolled la logo-va remove pannum */
+    }
+}
+
+/* Full screen menu overlay (Image 5) */
+.mobile-full-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-menu a {
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+    display: block;
+    margin: 25px 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute; top: 30px; right: 30px; color: white; font-size: 40px; cursor: pointer;
+}
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import '../../assets/css/Navbar.css';
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      <nav className={`mars-navbar-main ${scrolled ? 'is-scrolled' : ''}`}>
+        <div className="nav-flex-wrapper">
+          
+          {/* WHITE NAVBAR BOX: Contains Logo and Links */}
+          <div className="nav-white-container">
+            {/* Logo Section - Hidden on scroll to center the capsule */}
+            {!scrolled&&<AnimatePresence>
+                (
+                <motion.div 
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="nav-logo-area"
+                >
+                  <img src="/marslogo.png" alt="Mars Logo" className="logo-main-img" />
+                </motion.div>
+              )
+            </AnimatePresence>}
+
+            {/* Navigation Links Area */}
+            <div className="nav-links-area">
+              <div className="nav-links-list hide-mobile">
+                <a href="#home" className="nav-item">HOME</a>
+                <a href="#about" className="nav-item">ABOUT</a>
+                <a href="#solutions" className="nav-item active-text">MARS SOLUTIONS</a>
+                <a href="#contact" className="nav-item">CONTACT</a>
+                <a href="#blog" className="nav-item">BLOG</a>
+              </div>
+            </div>
+          </div>
+
+          {/* EXTERNAL BUTTON: Fixed at Right side */}
+          {!scrolled &&<AnimatePresence>
+             (
+              <motion.div 
+                initial={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                className="external-button-box hide-mobile"
+              >
+                <button className="build-action-btn blog-swap-hover">
+                  <span className="btn-icon">→</span>
+                  <span className="btn-label">LET'S BUILD YOUR VEHICLE</span>
+                </button>
+              </motion.div>
+            )
+          </AnimatePresence>}
+
+          {/* MOBILE TOGGLE: Logo Left, Hamburger Right initially */}
+          <div className={`mobile-nav-toggle ${scrolled ? 'toggle-active' : ''}`} onClick={() => setIsMobileMenuOpen(true)}>
+            <span className="line"></span>
+            <span className="line"></span>
+            <span className="line"></span>
+          </div>
+        </div>
+      </nav>
+
+      {/* MOBILE MENU OVERLAY */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="mobile-full-overlay"
+          >
+            <div className="close-btn" onClick={() => setIsMobileMenuOpen(false)}>✕</div>
+            <div className="overlay-menu">
+              <a href="#home" onClick={() => setIsMobileMenuOpen(false)}>HOME</a>
+              <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a>
+              <a href="#solutions" onClick={() => setIsMobileMenuOpen(false)}>MARS SOLUTIONS</a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a>
+              <a href="#blog" onClick={() => setIsMobileMenuOpen(false)}>BLOG</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navbar;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+import React, { useState, useEffect } from "react";
+import "../../assets/css/Navbar.css";
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 50px threshold to prevent constant re-rendering
+      const scrolled = window.scrollY > 50;
+      if (scrolled !== isScrolled) {
+        setIsScrolled(scrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScrolled]);
+
+  return (
+    <nav className={ `mars-navbar-main ${isScrolled ? "is-scrolled" : ""}`}>
+      <div className="nav-flex-wrapper">
+        {/* Main White/Black Box Container */}
+        <div className=" d-flex flex-column align-items-center justify-content-center rounded-3 col-12 " >
+          {!isScrolled&&<div className="nav-logo-area">
+            <img src="/marslogo.png" alt="Logo" className="logo-main-img" />
+          </div>}
+
+          <div className="nav-white-container w-100  nav-links-area d-flex align-items-center justify-content-center">
+            <ul className="nav-links-list d-flex ">
+              <li><a href="#home" className="nav-item active-text">HOME</a></li>
+              <li><a href="#about" className="nav-item">ABOUT</a></li>
+              <li><a href="#solutions" className="nav-item">MARS SOLUTIONS</a></li>
+              <li><a href="#contact" className="nav-item">CONTACT</a></li>
+              <li><a href="#blog" className="nav-item">BLOG</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* This button stays hidden on small screens */}
+        <button className="build-action-btn d-none d-lg-flex">
+          <span className="btn-icon">→</span>
+          <span className="btn-label">LET'S BUILD YOUR VEHICLE</span>
+        </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/* --- PERFORMANCE CORE: STOP THE LAG --- */
+.mars-navbar-main, 
+.nav-white-container, 
+.nav-item, 
+.logo-main-img {
+    will-change: transform, width, background-color, padding; /* Hardware acceleration */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.mars-navbar-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px; /* Use padding instead of top for smooth shift */
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.is-scrolled.mars-navbar-main {
+    padding-top: 15px;
+}
+
+.nav-flex-wrapper {
+    width: 95%;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the white box */
+}
+
+/* BASE WHITE CONTAINER */
+.nav-white-container {
+    height: 85px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 1100px; /* Locked width avoids calculation lag */
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* SCROLLED BLACK CAPSULE */
+.is-scrolled .nav-white-container {
+    background: black !important;
+    max-width: 650px; /* Fixed max-width ensures no jerk */
+    height: 65px;
+    border-radius: 10px;
+    padding: 0 50px;
+}
+
+/* Sections Alignment */
+.nav-logo-area { flex: 0 0 auto; margin-right: 40px; transition: transform 0.6s ease; height:50px}
+.is-scrolled .nav-logo-area { transform: scale(0.9); }
+.logo-main-img { height: auto !important; width: 100px; margin-bottom:10px}
+
+.nav-links-area { display: flex; justify-content: center;}
+.nav-links-list { display: flex; gap: 35px; list-style: none; margin: 0; padding: 0; }
+
+.nav-item {
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease;
+}
+
+.is-scrolled .nav-item { color: #fff; }
+.active-text { color: #E67E22; }
+
+/* Desktop External Button Logic */
+.build-action-btn {
+    background: black;
+    color: white;
+    border: none;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 2.5%; /* Positioned outside the white box container */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.is-scrolled .build-action-btn {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+}
+
+/* --- MOBILE Logic: EXACTLY SAME AS DESKTOP --- */
+@media (max-width: 1024px) {
+    .mars-navbar-main { padding-top: 10px; }
+    .is-scrolled.mars-navbar-main { padding-top: 10px; }
+
+    .nav-white-container {
+        max-width: 95% !important; /* Forces white box on mobile */
+        height: 60px !important;
+        padding: 0 20px !important;
+        justify-content: space-around !important;
+    }
+
+    .nav-logo-area { height: 60px !important; margin-bottom: 10px !important; }
+    .logo-main-img { height: 60px !important; width: 100% !important;}
+    
+    .nav-links-list { gap: auto !important;}
+    .nav-item { font-size: 10px !important; letter-spacing: 0; }
+
+    .is-scrolled .nav-white-container {
+        max-width: 90% !important;
+        height: 50px !important;
+    }
+
+    /* Remove the external button on mobile */
+    .build-action-btn { display: none !important; }
+}
+
+
+
+
+
+
+
+
+
+
+
+1111111111111111111111111111\111111111111111111111111111111111111111111111111
+.sustainable-section {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 100px 0;
+}
+
+.orbital-container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ORBIT ANIMATION */
+.orbit-wrapper-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: orbitRotate 45s linear infinite;
+}
+
+.orbit-wrapper-main.pause-orbit {
+  animation-play-state: paused;
+}
+
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* INDIVIDUAL ITEMS */
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -90px;
+  transform: rotate(calc(var(--index) * (360deg / var(--total)))) translate(320px);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* STABILIZER (Keeps image upright) */
+.stabilizer {
+  width: 100%;
+  height: 100%;
+  animation: orbitRotate 45s linear infinite reverse;
+}
+
+.pause-orbit .stabilizer {
+  animation-play-state: paused;
+}
+
+.orbit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.orbit-img.hide-img {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* CONTENT BOX */
+.orbit-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4facfe;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  color: white;
+}
+
+.orbit-content.show-content {
+  opacity: 1;
+  transform: scale(1.1); /* Slightly pops out */
+  pointer-events: auto;
+}
+
+.orbit-content h4 { font-size: 14px; margin-bottom: 5px; font-weight: 800; }
+.orbit-content p { font-size: 11px; line-height: 1.2; }
+
+/* CENTER CONTENT */
+.center-content { z-index: 20; max-width: 450px; }
+.sub-label { font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #666; }
+.main-title { font-size: 28px; font-weight: 900; margin: 15px 0; line-height: 1.2; }
+
+/* BUTTON */
+.drive-btn {
+  display: inline-flex;
+  border: 2px solid #000;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+.arrow-sus { background: #fff; padding: 15px; border-right: 2px solid #000; }
+.text-sus { background: #000; color: #fff; padding: 15px 25px; font-weight: 800; font-size: 12px; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .orbital-container { width: 320px; height: 320px; }
+  .orbit-item { 
+    width: 90px; height: 65px; 
+    margin-top: -32px; margin-left: -45px;
+    transform: rotate(calc(var(--index) * (360deg / var(--total)))) translate(140px);
+  }
+  .main-title { font-size: 14px; }
+  .center-content { transform: scale(0.85); }
+  .orbit-content h4 { font-size: 10px; }
+  .orbit-content p { font-size: 8px; }
+}

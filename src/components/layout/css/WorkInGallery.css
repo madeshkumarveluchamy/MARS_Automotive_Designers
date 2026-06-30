@@ -1,0 +1,275 @@
+.blog-swap-gallery {
+    display: flex;
+    align-items: center;
+    background: #000 !important ;
+    color: #fff !important;
+    border: 1px solid #000;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    /* Responsive Widths */
+    width: 200px !important;
+    height: 50px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+
+
+.massive-text-gallery:hover{
+  transform:scale(1.1);
+}
+/* THE arrow-gallery (Left to Right Slide) */
+.blog-swap-gallery .arrow-gallery {
+    position: absolute;
+    left: 0;
+    background: #fff !important;
+    color: #000  !important;
+    width: 50px; 
+    height: 85%!important;
+    margin:3px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Smooth Cubic-Bezier Transition */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    z-index: 2;
+}
+
+/* THE text-gallery (Right to Left Slide) */
+.blog-swap-gallery .text-gallery {
+    width: 100%;
+    text-gallery-align: center;
+    padding-left: 45px; /* arrow-gallery space-ai thavirkka */
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE HOVER MOTION --- */
+/* arrow-gallery moves to the very end of the button */
+.blog-swap-gallery:hover .arrow-gallery {
+    transform: translateX(280%); /* 200px button - 50px arrow-gallery = 150px shift */
+}
+
+/* text-gallery moves to the left side */
+.blog-swap-gallery:hover .text-gallery {
+    transform: translateX(-45px); 
+}
+.blog-swap-gallery:hover{
+  transform: scale(1.1);
+}
+.massive-text-gallery{
+  font-family: 'Michroma', sans-serif !important;
+  text-gallery-transform: uppercase;
+  text-gallery-shadow: 8px 0px 0px currentColor, -1px 0px 0px currentColor;
+}
+
+.info-title{
+  font-family: 'Michroma', sans-serif !important;
+  text-gallery-transform: uppercase;
+}
+
+@media (max-width: 1440px) {
+    .blog-swap-gallery {
+        width: 170px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-gallery .arrow-gallery {
+        width: 42px;
+    }
+    .blog-swap-gallery .text-gallery {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-gallery:hover .arrow-gallery {
+        transform: translateX(108px) !important; /* 170px - 42px */
+    }
+    .blog-swap-gallery:hover .text-gallery {
+        transform: translateX(-35px);
+    }
+ 
+}
+
+@media(min-width:1400px) and (max-width:2560px){
+ .cinematic-nav-wrapper {
+    top: 442px !important; 
+    }
+}
+
+@media(min-width:1200px) and (max-width:1400px){
+ .cinematic-nav-wrapper {
+    top: 67% !important; 
+    }
+}
+
+@media (max-width: 1025px) {
+    .blog-swap-gallery {
+        width: 150px !important; /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-gallery .arrow-gallery {
+        width: 42px;
+    }
+    .blog-swap-gallery .text-gallery {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-gallery:hover .arrow-gallery {
+        transform: translateX(107px) !important; /* 170px - 42px */
+    }
+    .blog-swap-gallery:hover .text-gallery {
+        transform: translateX(-35px);
+    }
+    
+}
+
+@media(min-width:990px) and (max-width:1028px){
+ .cinematic-nav-wrapper {
+    top: 61.75% !important; 
+    }
+}
+/* Mobile Responsiveness (For Phone Screens) */
+@media (max-width: 576px) {
+    .blog-swap-gallery { /* Smallest screens-kku button size kuraiyum */
+        height: 42px;
+    }
+    .blog-swap-gallery .arrow-gallery {
+        width: 42px;
+    }
+    .blog-swap-gallery .text-gallery {
+        font-size: 9px;
+        padding-left: 35px;
+    }
+    .blog-swap-gallery:hover .arrow-gallery {
+        transform: translateX(99px) !important; /* 170px - 42px */
+    }
+    .blog-swap-gallery:hover .text-gallery {
+        transform: translateX(-35px);
+    }
+}
+/* Container must be relative for floating buttons */
+.gallery-content-area {
+    position: relative;
+}
+
+.gallery-section {
+    padding: 20px 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.gallery-main-titles {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #000;
+    letter-spacing: 1px;
+    text-gallery-transform: uppercase;
+}
+
+/* Image Styling */
+.gallery-img-box {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cinematic-nav-wrapper {
+    position: absolute;
+    /* 65% irunthathai 50% illa athukkum keezha 40% nu kurainga */
+    top: 64.5%; 
+    left: 51%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    display: flex;
+    pointer-events: none; 
+}
+
+.gallery-custom-prev, 
+.gallery-custom-next {
+    width: 65px;
+    height: 65px;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto; /* Buttons remain clickable */
+}
+
+/* Gray Scale Colors */
+.gallery-custom-prev {
+    background: #e2e2e2;
+    color: #000;
+    
+}
+
+.gallery-custom-next {
+    background: #cccccc;
+    color: #000;
+   
+}
+
+.gallery-custom-prev:hover{
+   background: #000;
+   color: #fff;
+   transform:Scale(1.1);
+    z-index:999;
+}
+
+
+.gallery-custom-next:hover {
+    background: #000;
+    color: #fff;
+    transform:Scale(1.2);
+     z-index:999;
+}
+
+/* Description & View More Button */
+.gallery-desc {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 550px;
+}
+
+
+/* MOBILE RESPONSIVE QUERIES */
+@media (max-width: 768px) {
+    /* Buttons move to bottom center on mobile for better UX */
+    .cinematic-nav-wrapper {
+        position: relative;
+        top: ;
+        left: 0;
+        transform: none;
+        justify-content: right;
+        margin-top: 25px;
+        pointer-events: auto;
+    }
+
+    .gallery-img-box {
+        height: 300px;
+    }
+
+    .gallery-main-titles {
+        font-size: 28px;
+    }
+
+    .gallery-view-btn {
+        background:#fff !important;
+        width: 100%;
+        justify-content: center;
+    }
+}

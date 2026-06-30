@@ -1,0 +1,1380 @@
+/* src/css/ServiceDetail.css */
+
+.service-detail-root {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.detail-hero {
+  height: 450px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+@media(max-width:520px){
+  .detail-hero {
+ height:60vh ;
+}
+
+}
+
+.detail-hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay for text readability */
+}
+
+.detail-hero h1 {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.list-group-item {
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  background: #fcfcfc;
+}
+
+.sidebar-box {
+  background: #f8f9fa;
+  padding: 30px;
+  border-left: 5px solid #ff5f38; /* Mars Theme Orange Color */
+}
+
+/* ServiceDetail.css */
+.detail-hero {
+  height: 400px;
+  background-image: url('../../assets/service11.png'); /* Unga image path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.detail-hero .overlay {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.1); /* Dark tint */
+}
+
+.hero-title {
+  color: white;
+  z-index: 1;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero-section { height: 500px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
+.hero-title { color: #fff; font-size: 3rem; font-weight: 900; z-index: 1; text-transform: uppercase; }
+
+/* Capabilities Section */
+.cap-item { padding: 30px; border-bottom: 1px solid #ddd; background: #fcfcfc; display: flex; justify-content: space-between; align-items: center; }
+.cap-item.dark-bg { background: #222; color: #fff; }
+.cap-item h3 { font-size: 12px; font-weight: 700; }
+.cap-item p { margin: 0; color: #666; }
+
+/* ServiceDetail.css */
+.detail-hero { height: 450px; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center; }
+.overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); }
+.hero-title { color: white; font-weight: 900; z-index: 1; text-transform: uppercase; }
+
+/* Orange color highlight (Screenshot-la irukkura mathiri) */
+.btn-contact { background-color: #ff5f38; color: white; padding: 10px 20px; border: none; }
+
+/* Capabilities list color */
+.dark-bg { background-color: #222; color: #fff; }
+
+/* Hero Section */
+.detail-hero { height: 500px; background: url('../assets/service11.png') center/cover; display: flex; align-items: center; justify-content: center; position: relative; }
+.detail-hero h1 { color: white; font-size: 3.5rem; font-weight: 900; z-index: 1; text-align: center; }
+
+/* Capabilities Colors */
+.cap-row { padding: 25px; border-bottom: 1px solid #ddd; background: #fcfcfc; display: flex; justify-content: space-between; align-items: center; }
+.dark-row { background: #222 !important; color: white !important; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+}
+.detail-hero {
+  height: 100vh; /* Screen full height-kku */
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 2.5rem; /* Screenshot-la irukkura size-kku */
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  max-width: 700px; /* Text line-ai control panna */
+  line-height: 1.1;
+  z-index: 1; /* Dark overlay-kku mela vara */
+  margin: 0 auto;
+}
+
+
+.cap-card {
+  padding: 30px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fcfcfc; /* Initial color */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.cap-card:hover h4, .cap-card:hover p {
+  color: #e3e192; /* Hover panna text white aagum */
+}
+.cap-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px; /* Text-kkum box-kkum gap */
+  border-bottom: 4px solid #fff; /* Intha line thaan light gap-ai kudukkum */
+  background-color: #fdfaf0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover pannum pothu line gap kooda white-a maarum */
+.cap-row:hover {
+  border-bottom: 2px solid #222; 
+}
+
+.cap-row h4 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.precision-section { padding: 80px 0; background: #fff; }
+.title-text { font-weight: 800; font-size: 2.5rem; }
+
+.contact-btn {
+  background: #d35400; /* Orange color */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  font-weight: bold;
+}
+
+.hero-img { width: 100%; height: 500px; object-fit: cover; }
+
+.link-item { cursor: pointer; padding: 10px 0; }
+.link-item h5 { display: flex; justify-content: space-between; font-weight: bold; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title-text { font-size: 1.8rem; }
+}
+
+/* Precision Section Styles */
+.precision-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.title-text {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+/* Contact Button */
+.contact-btn {
+  background-color: #d35400;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover { background-color: #a04000; }
+
+/* Image Styling */
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Service Links (Safety First, etc.) */
+.service-links {
+  margin-top: 20px;
+}
+
+.link-item {
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-item h5{
+  text-align:left;
+}
+
+/* Line separator styling */
+.border-top { border-top: 1px solid #ddd; }
+.border-bottom { border-bottom: 1px solid #ddd; }
+
+/* Animation Effect */
+.service-links .py-3:hover {
+  padding-left: 10px;
+  background-color: #f9f9f9;
+}
+
+.precision-section { background: #fff; }
+.title-text { font-weight: 800; font-size: 2.5rem; }
+.link-item { cursor: pointer; padding: 10px 0; transition: 0.3s; }
+.link-item:hover { color: #d35400; }
+
+.cap-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-bottom: 1px solid #ddd;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Precision Section Text Alignment */
+.precision-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.title-text {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: #000000;
+  margin-bottom: 25px; /* Title-kkum description-kkum naduvula gap */
+}
+
+.text-desc {
+  font-size: 1.15rem; /* Text size-ai readable-ah vachiruken */
+  color: #333333;
+  line-height: 1.7;
+  max-width: 900px; /* Text full-a spread aahama irukka */
+  margin-bottom: 40px; /* Text-kkum keela irukkura images-kkum gap */
+  font-weight: 400;
+}
+
+/* Responsive view-kku (Mobile-la text size-ai kurachikalam) */
+@media (max-width: 768px) {
+  .title-text {
+    font-size: 1.8rem;
+  }
+  .text-desc {
+    font-size: 1rem;
+  }
+}
+/* Service Links Container */
+.service-links {
+  margin-top: 30px;
+}
+
+/* Ovvoru service item-kum oru clear-ana box/block */
+.service-item {
+  cursor: pointer;
+  padding: 10px ;          /* Box-kulla nalla gap irukkum */
+  margin-bottom: 25px;    /* Row-galukku naduvula gap */
+  border: 1px solid #ddd; /* Thin border - ippo block clear-ah theriyum */
+  background-color: #ffffff; /* White background - Text block aagum */
+  border-radius: 8px;     /* Round edges */
+  transition: all 0.3s ease;
+}
+
+.service-item h5{
+  text-align:start;
+}
+
+/* Hover pannum pothu effect */
+.service-item:hover {
+  background-color: #f8f9fa;
+  border-color: #d35400;  /* Border orange-ah maarum */
+  color: #000000;         /* Text black-ah irukkum */
+}
+
+/* Title Styling */
+.service-item h5 {
+  color: #000000;         /* Text black color */
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Description Text */
+.text-muted {
+  color: #333333;         /* Dark gray - read panna easy-ah irukkum */
+  line-height: 1.6;
+}
+
+.service-item {
+  cursor: pointer !important;
+  padding: 10px ;
+  margin-top:1vw  !important;
+  border: 1px solid #ddd !important;
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  color: #000000 !important;
+}
+
+.service-item:hover {
+  background-color: #f8f9fa !important;
+  border-color: #d35400 !important;
+}
+
+.text-muted {
+  color: #444444 !important;
+  line-height: 1.6;
+}
+/* Intha text-ai black-ah maatha */
+.service-desc-text {
+  color: #000000 !important; /* Text color black */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.main-service-img {
+/* Ithu image-ai mela ethum */
+  position: relative; /* Positioning correct-ah irukka */
+  z-index: 1;
+  height:670px;
+}
+
+/* --- UNIVERSAL BUTTON STYLE (index.css) --- */
+.serviceblog-swap-FAQ {
+    display: flex;
+    align-items: center;
+    background: rgb(201, 98, 13);
+    color: #ffffff;
+    border: 1px solid rgb(201, 98, 13) !important;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    width: 200px; 
+    height: 48px;
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+/* THE ARROW */
+.serviceblog-swap-FAQ .arrow {
+    position: absolute;
+    left: 0;
+    background: #ffffff;
+    color: #0e0c0c;
+    width: 50px; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    z-index: 2;
+}
+
+/* THE TEXT */
+.serviceblog-swap-FAQ .text {
+    width: 100%;
+    text-align: center;
+    padding-left: 20px; 
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE HOVER MOTION --- */
+.serviceblog-swap-FAQ:hover .arrow {
+    transform: translateX(150px); 
+}
+
+.serviceblog-swap-FAQ:hover {
+    transform: scale(1.05); /* 1.1 kku bathila 1.05 better look kudukkum */
+}
+
+.serviceblog-swap-FAQ:hover .text {
+    transform: translateX(-25px); /* Arrow move aagum pothu text-ai adjust panna */
+}
+.service-desc-text {
+  color: #000000 !important;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* service123-oda class-ai 'main-service-img' nu JSX-la add pannitu, CSS-la ithai podunga */
+.main-service-img {
+/* Ithu image-ai mela ethum */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Ithu image-kku oru shadow kudukkum */
+  border-radius: 10px;
+  backgroundSize: cover;
+}
+
+.hero-title {
+  font-size: 6%;             
+  font-weight: 300;            
+  text-transform: uppercase;
+  line-height: 1.0;           
+  color: #ffffff;
+  
+ 
+  transform: scaleY(1.4);  
+  transform: scale(1.5, 1.5); 
+  transform-origin: center;
+    /* 1.3 times height-ai kootum */
+  transform-origin: center;
+  
+  margin: 0 auto;
+  padding: 0;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Image-la irukkura maari shadow */
+  width: 90%;                  /* Width-ai limit panni center pannum */
+}
+
+/* 1. Sharp Images (Bootstrap 'rounded'-ai override panna) */
+.sharp-img-fix, .img-fluid {
+    border-radius: 0px !important; /* Sharp corners */
+}
+
+/* 2. Three Images in one line logic */
+/* JSX-la irukkura row g-2-va intha class vazhiya control panrom */
+.image-container-row {
+    display: flex !important;
+    gap: 15px !important;
+}
+
+.image-container-row > div {
+    flex: 1; /* Ellam same width-la irukkum */
+}
+
+/* 3. Arrow & Service Link Fix */
+.service-item h5 {
+    font-weight: 700;
+   
+}
+
+/* Arrow rotation fix - Reference-padi ellame sharp-ah irukka */
+.service-item span {
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+.service-desc-text {
+    margin-top: 40px; /* Text-ai mela ethum */
+    position: relative;
+    font-size: 14px !important; 
+    line-height: 1.6 !important; 
+   color: #666 !important;
+    z-index: 5;
+    background: #ffffff; /* Text mela background iruntha clarity-kku */
+    padding-bottom: -20px;
+}
+/* 1. Sharp Images (rounded-ai remove pannum) */
+.sharp-img {
+    border-radius: 0px !important;
+    display: block;
+    width: 100%;
+    height: 300px; /* Ella image-um ore height-la irukka */
+    object-fit: cover;
+}
+
+/* 2. Gap between images */
+.custom-gap {
+    gap: 10px !important; /* Neenga kettapadi light gap */
+}
+
+/* 3. Text overlap effect */
+.overlap-text {
+    margin-top: -30px; /* Text-ai mela ethum */
+    position: relative;
+    z-index: 10;
+}
+
+.title-text {
+  font-weight: 800;
+  margin-top: -20px; /* Title-ai mela ethum */
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.compact-text {
+    font-size: 0.85rem !important; /* 0.10rem-ai mathittu 0.85rem nu podunga */
+    line-height: 1.4 !important;
+   color: #3f3e3e !important; 
+    margin-bottom: 20px !important;
+}
+
+/* 1. Images row container - perfect alignment */
+.row.g-2.mb-4 {
+    display: flex !important;
+    flex-wrap: nowrap !important; 
+    gap: 20px !important;
+   
+}
+
+/* 2. Each image container - fix 50% width */
+.row.g-2.mb-4 > .col-6 {
+    flex: 1 !important;        /* Rendu image-um same space edukkum */
+    width: 100% !important;   /* Parent-kulla fit aagum */
+    padding: 0 !important;
+        /* Bootstrap padding-ai remove pannum */
+}
+
+.col-lg-6 p.text-black {
+    font-size: 0.95rem !important;      /* Compact size */
+    line-height: 1.6 !important;        /* Comfortable line height */
+    text-align: left !important;        /* Text Left-la irukkum */
+    margin-bottom: 20px !important;
+    width: 100% !important;  
+  padding-left: -10px !important;          /* Text container-a full-a vachukka */
+}
+
+/* Arrow design-ai perusaakkum and fix pannum */
+.service-item span {
+    font-size: 16px !important;  /* Arrow-oda size-ai inga kootikalam */
+    font-weight: 900 !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Hover pannum pothu arrow konjam move aaganum-na */
+.service-item:hover span {
+    transform: scale(1.1); /* Hover pannum pothu arrow konjam zoom aagum */
+}
+
+/* Screen background-ai white-aaka (Main section) */
+.capabilities-bg {
+    background-color: #ffffff !important;
+    padding: 80px 0;
+}
+
+/* Container design (White background with slight shadow) */
+/* Container design-ai background yellow-oda set panna */
+.cap-row {
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #fdfaf0; /* Light Yellow background */
+    border-bottom: 1px solid #e0ddd5; /* Subtle border */
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+    margin: 0 auto; /* Center alignment */
+    margin-bottom: 10px; /* Rows-kku naduvula gap */
+}
+.capabilities-bg {
+    background-color: #ffffff !important;
+    padding-top: 40px !important; /* Mela irukkura extra space-ai kurakkum */
+    margin-top: -60px !important;  /* Intha negative value ellathaiyum mela etthum */
+}
+
+/* Hover pannum pothu Black-a maarum */
+.cap-row:hover {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+/* Text & Title colors-ai hover pannum pothu white-aaka */
+.cap-row:hover p, 
+.cap-row:hover h4, 
+.cap-row:hover span {
+    color: #fff !important;
+}
+
+/* Hover effect - Black box */
+.cap-row:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Title Styling */
+.cap-row h4 {
+    width: 30%;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Description Styling */
+.cap-row p {
+    width: 90%;
+    font-size: 14px;
+    margin: 0;
+    color: #444; /* Greyish color for readable text */
+}
+
+
+/* Title and Paragraph Black Color */
+.capabilities-bg h2, 
+.capabilities-bg p {
+    color: #000000 !important;
+}
+.capabilities-bg p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+}
+/* Optional: Title-ku konjam bold kudutha innum nalla irukkum */
+.capabilities-bg h2 {
+    font-weight: 700 !important;
+}
+
+/* ServiceDetail.css */
+
+/* Use parent classes to avoid conflict */
+.service-detail-root .cap-row {
+    display: flex;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #fdfaf0;
+    border-bottom: 1px solid #e0ddd5;
+    color: #000;
+    transition: all 0.3s ease;
+    width: 80%;
+    margin: 0 auto 10px auto;
+}
+
+/* Fleet/Service Images Container Fix */
+.precision-section .row.g-2 img {
+    width: 100% !important;
+    height: 200px !important;    /* Ore height-la irukkum */
+    object-fit: cover !important; /* Image stretch aagama correct-a fit aagum */
+    border-radius: 0px !important; /* Rounded vendaam-na 0px */
+    /* Image-kku keela gap */
+}
+
+/* Row-vukku spacing */
+.precision-section .row.g-2 {
+    display: flex;
+    flex-wrap: nowrap; /* Row-la thaan irukkum, break aagathu */
+}
+
+.precision-section .row.g-2 img {
+    width: 100% !important;
+    height: 200px !important;    /* Ore height-la fix pannidalam */
+    object-fit: cover !important; /* Image stretch aagama correct-a fill aagum */
+    display: block;
+    /* Bootstrap padding-ai remove pannum */
+}
+/* ServiceDetail.css */
+.col-lg-6 .mb-3.text-black {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #474747 !important;
+}
+
+/* Title Styling */
+.service-item h5 {
+    font-size: 15px !important; /* Title size (e.g., SAFETY FIRST) */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+   
+}
+
+/* Description Styling */
+.service-item p.small {
+    font-size: 14px !important; /* Description size */
+    line-height: 1.5 !important;
+    color: #666 !important; /* Konjam lighter gray-va iruntha readability nalla irukkum */
+    margin-top: 8px !important;
+}
+
+
+
+
+
+
+
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Ithu thaan side gap-ai thadukkum */
+}
+
+/* Responsive View (Mobile & Tablet) */
+@media (max-width: 1023px) {
+  .detail-hero {
+    height: 70vh !important; /* Mobile & Tablet-kku mattum 70vh */
+  }
+}
+
+/* --- 2. Mobile S (320px - 374px) --- */
+@media (min-width: 320px) and (max-width: 374px) {
+    .nav-logo { display: none !important; }
+    .hero-title { font-size: 20px !important; text-align: center !important; max-width:200px; }
+    .cap-row { width: 98% !important; padding: 10px !important; text-align: center !important; }
+    .unified-img-col { flex: 1 1 100% !important; }
+}
+
+/* --- 3. Mobile M (375px - 424px) --- */
+@media (min-width: 375px) and (max-width: 424px) {
+    .nav-logo { display: none !important; }
+    .hero-title { font-size: 23px !important; text-align: center !important; max-width:250px;}
+    .cap-row { width: 95% !important; padding: 15px !important; text-align: center !important; }
+    .unified-img-col { flex: 1 1 100% !important; }
+}
+
+/* --- 4. Mobile L (425px - 767px) --- */
+@media (min-width: 425px) and (max-width: 767px) {
+    .hero-title { font-size: 26px !important; text-align: center !important; max-width:60vw;}
+    .cap-row { width: 95% !important; text-align: center !important; }
+    .unified-img-col { flex: 1 1 100% !important; }
+}
+
+/* --- 5. Tablet (768px - 1023px) --- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-title { font-size: 47px !important; text-align: center !important; }
+    .cap-row { width: 100% !important; text-align: center !important; }
+    .unified-img-col { flex: 1 1 calc(50% - 20px) !important; }
+}
+
+
+
+/* Mobile S (320px - 374px) */
+@media (max-width: 374px) {
+    .title-text, .text-desc { 
+        text-align: center !important; 
+        font-size: 20px !important; 
+    }
+    .text-desc { font-size: 0.9rem; }
+}
+
+/* Mobile M (375px - 424px) */
+@media (min-width: 375px) and (max-width: 424px) {
+    .title-text, .text-desc { 
+        text-align: center !important; 
+        font-size: 20px !important; 
+    }
+    .text-desc { font-size: 1rem; }
+}
+
+/* Mobile L (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .title-text, .text-desc { 
+        text-align: center !important; 
+        font-size: 20px !important;
+    }
+    .text-desc { font-size: 1rem; }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .title-text, .text-desc { 
+        text-align: center !important; 
+    }
+    .title-text { font-size: 20px !important; }
+}
+
+
+/* Mobile view-la description font and gap adjust pannura code */
+@media (max-width: 767px) {
+    .cap-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 25px 15px !important;
+        
+
+    }
+
+    .cap-row p{
+      max-width:100% !important;
+      padding-top:10px ;
+    }
+
+    /* Responsive center alignment for h4 inside cap-row */
+@media (max-width: 1023px) {
+    .cap-row h4 {
+        text-align: center !important;
+        width: 100% !important;
+        font-size: 18px!important; 
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 10px !important; /* Screen edge-la ottikitu irukaama irukka */
+    }
+}
+
+    .cap-row p {
+        /* Description font-ai chinna panniten */
+        font-size: 0.85rem !important; 
+        
+        /* Line gap-aiyum adjust panniten */
+        line-height: 1.4 !important;  
+        font-size: 15px !important;
+        
+        color: #444 !important;
+        max-width: 90%;
+        margin: 0; /* Center alignment-kku */
+    }
+}
+
+/* Mobile S (320px - 374px) */
+@media (max-width: 374px) {
+    
+}
+
+/* Mobile M (375px - 424px) */
+@media (min-width: 375px) and (max-width: 424px) {
+    .detail-hero h1 { font-size: 18px !important; }
+}
+
+/* Mobile L (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .detail-hero h1 { font-size: 20px !important; }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .detail-hero h1 { font-size: 5vw !important; }
+}
+
+/* Container - Idhu thaan button-ai center-la irukkum */
+.btn-wrapper {
+  display: flex !important;
+  justify-content: center !important; /* Horizontally center */
+  width: 100% !important;
+  padding: 20px 0;
+}
+
+/* Base Button Style */
+.contact-btn {
+  background-color: #d35400;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  display: block;
+}
+
+/* --- Responsive Alignment --- */
+
+/* Mobile S & M (320px - 424px) */
+@media (max-width: 424px) {
+  .contact-btn {
+    width: 80% !important; /* width-kooda */
+    margin: 0 auto !important; /* Ithu center panna romba mukkiyam */
+    padding: 12px;
+  }
+}
+
+/* Mobile L (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+  .contact-btn {
+    width: 70% !important;
+    margin: 0 auto !important;
+    padding: 14px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-btn {
+    width: auto !important;
+    margin: 0 auto !important;
+    padding: 12px 35px;
+  }
+}
+
+/* --- Responsive Contact Button Adjustment --- */
+
+/* Mobile S, M, L (Up to 767px) */
+@media (max-width: 767px) {
+  .serviceblog-swap-FAQ { /* Unga button-oda class name */
+    margin-top: -20px !important; /* Button-ai mela ethum */
+    margin-bottom: 20px !important; /* Keela space irukka */
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .serviceblog-swap-FAQ {
+    margin-top: -20px !important; /* Tablet-la konjam kammiya ethum */
+  }
+}
+
+/* --- Default Desktop View (Nothing changes here) --- */
+.btn-container {
+    display: block; /* Desktop-la neenga epadi vachirukkeengalo appadiye irukkum */
+}
+
+/* --- Responsive View (Mobile & Tablet) --- */
+@media (max-width: 1023px) {
+    .btn-container {
+        display: flex !important;
+        justify-content: center !important; /* Button-ai center panna */
+        width: 100% !important;
+    }
+}
+
+/* --- RESPONSIVE TEXT ALIGNMENT --- */
+
+/* 1. Mobile S & M (320px - 424px) */
+@media (min-width: 320px) and (max-width: 424px) {
+    .col-lg-6 .mb-3.text-black {
+        text-align: center !important;
+        padding: 0 15px !important; /* Text edge-la ottikitu irukaama irukka */
+        width: 100% !important;
+    }
+}
+
+/* 2. Mobile L (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .col-lg-6 .mb-3.text-black {
+        text-align: center !important;
+        padding: 0 20px !important;
+        width: 100% !important;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .col-lg-6 .mb-3.text-black {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;        /* 90% irunthathai 100% aakiduvom */
+        float: none !important;        /* Ithu thaan mukkiyam: float-ai remove pannum */
+        display: block !important;     /* Block element-ah mathum */
+        padding-left: 20px !important; /* Side space-kku */
+        padding-right: 20px !important;
+    }
+}
+
+/* --- Desktop (No Change) --- */
+.service-desc-text {
+  color:  #474747 !important;
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 1.6 !important;
+  margin-bottom: 20px;
+}
+
+/* --- Responsive (Mobile & Tablet Only) --- */
+
+/* Mobile S & M (320px - 424px) */
+@media (min-width: 320px) and (max-width: 424px) {
+    .service-desc-text {
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+}
+
+/* Mobile L (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .service-desc-text {
+        text-align: center !important;
+        padding: 0 15px !important;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .service-desc-text {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 90% !important;
+    }
+}
+
+
+/* Responsive adjustments for mobile and tablet */
+@media (max-width: 1023px) {
+    /* Arrow-ai control panna span tag */
+    .motion-div-class span { /* .motion-div-class nu irukkura edathula unga div-oda class-ai podunga */
+        display: block !important;
+        position: relative !important;
+        top: -15px !important;      /* Intha -15px-ai -20px, -30px nu maathip paarunga */
+        text-align: center !important;
+        cursor: pointer;
+    }
+
+    /* Subtitle-kku oru gap */
+    .motion-div-class h4 {
+        margin-bottom: 5px !important;
+    }
+}
+
+/* Unga motion.div-oda main class-ai inga podunga */
+.motion-div-class {
+    position: relative !important;
+    padding-bottom: 30px !important; /* Arrow-kku keela space irukka */
+}
+
+@media (max-width: 1023px) {
+    .motion-div-class span {
+        position: absolute !important;
+        bottom: 20px !important;  /* Div-oda bottom-la irunthu 5px gap-la irukkum */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: block !important;
+    }
+}
+
+/* 1. Desktop View (Default - 1024px and above) */
+.arrow-mobile {
+    display: none !important; /* Desktop-la hide aagidum */
+}
+.arrow-desktop {
+    display: block !important; /* Desktop-la mattum irukkum */
+}
+
+/* 2. Tablet & Mobile (1023px and below) */
+@media (max-width: 1023px) {
+    .arrow-desktop {
+        display: none !important; /* Desktop arrow-ai hide pannuvom */
+    }
+    
+    .arrow-mobile {
+        display: inline-block !important; /* Mobile-la mattum kaattuvom */
+    }
+
+    .title-with-arrow {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+}
+
+/* Tablet View (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    /* 1. Title and Button-ku naduvula gap */
+    .btn-container {
+        margin-top: 20px !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* 2. Button and Description (p tag) ku naduvula gap */
+    .maindess {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+        line-height: 1.6 !important; /* Text nalla readable-ah iruka */
+    }
+
+    /* 3. Image ku mela irukra gap */
+    .maindess + img {
+        margin-top: 20px !important;
+    }
+
+    /* Oru general padding for the row container */
+    .col-lg-6 {
+        padding: 0 30px !important; /* Side-la konjam space kudukka */
+    }
+}
+
+@media (max-width: 767px) {
+    /* 1. Title and Button spacing */
+    .btn-container {
+        margin-top: 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    /* Button-oda spacing mattum */
+    .btn-container {
+        margin-top: 15px !important;  /* Title-kum button-kum naduvula space */
+        margin-bottom: 20px !important; /* Button-kum description-kum naduvula space */
+    }
+
+    /* Paragraph spacing */
+    .maindess {
+        margin-top: 0 !important; /* Button-ku mela already space irukkum, so inga 0 */
+        margin-bottom: 20px !important;
+        text-align:justify !important;
+    }
+
+    /* Image-ku mela space */
+  
+}
+
+/* --- Ultra Wide Screens (2000px - 2560px and above) --- */
+@media (min-width: 2000px) {
+
+
+  .main-service-img {
+/* Ithu image-ai mela ethum */
+  position: relative; /* Positioning correct-ah irukka */
+  z-index: 1;
+  height:600px;
+}
+  
+  /* 1. Hero Section Height & Alignment */
+  .detail-hero {
+    height: 60vh !important; /* பெரிய திரைக்கு 60% உயரம் போதுமானது */
+  }
+
+  .hero-title {
+    font-size: 5rem !important; /* தலைப்பு பிரம்மாண்டமாகத் தெரிய */
+    max-width: 1200px !important;
+  }
+
+  /* 2. Capabilities Section (cap-row) */
+  .service-detail-root .cap-row {
+    width: 60% !important; /* அகலமான திரையில் 60% அகலம் கச்சிதமாக இருக்கும் */
+    padding: 40px 60px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .cap-row h4 {
+    font-size: 20px !important; /* எழுத்து அளவு அதிகரிப்பு */
+  }
+
+  .cap-row p {
+    font-size: 18px !important;
+  }
+
+  /* 3. Text Descriptions (Precision Section) */
+  .service-desc-text, .col-lg-6 .mb-3.text-black {
+    font-size: 1.2rem !important; /* வாசிக்க எளிதாக */
+    line-height: 1.8 !important;
+    max-width: 1000px !important;
+    margin: 0 auto 30px auto !important;
+  }
+
+  /* 4. Images Grid */
+  .precision-section .row.g-2 img {
+    height: 350px !important; /* படங்கள் பெரியதாகத் தெரிய */
+  }
+
+  /* 5. Button Scaling */
+  .serviceblog-swap-FAQ {
+    width: 280px !important; /* பட்டன் அளவு பெரியதாக */
+    height: 60px !important;
+    font-size: 16px !important;
+  }
+  
+  .serviceblog-swap-FAQ .text {
+    font-size: 14px !important;
+  }
+}
+
+/* --- 2560px and Above (4K/Ultra Wide) --- */
+@media (min-width: 2560px) {
+  .hero-title {
+    font-size: 7rem !important;
+  }
+  
+  .service-detail-root .cap-row {
+    width: 50% !important; /* இன்னும் சென்டராகவும் கம்பீரமாகவும் தெரிய */
+    padding: 50px 80px !important;
+  }
+  
+  .service-desc-text {
+    font-size: 1.4rem !important;
+  }
+}
+
+html, body {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important; /* இதுதான் சைடு மூவ்மெண்ட்டைத் தடுக்கும் */
+    box-sizing: border-box !important;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box !important;
+}
+
+.detail-hero, .service-hero {
+    width: 100% !important;
+
+    height: 100h !important;    
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+@media(min-width:1400px){
+  .main-service-img {
+/* Ithu image-ai mela ethum */
+  position: relative; /* Positioning correct-ah irukka */
+  z-index: 1;
+  height:645px;
+}
+}
+
+@media (min-width: 1920px) and (max-width: 2000px) {
+    .service-detail-root {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* கன்டென்ட் ஓவர்லே ஆகாமல் இருக்க */
+    .row {
+        margin: 0 !important;
+    }
+  .main-service-img {
+/* Ithu image-ai mela ethum */
+  position: relative; /* Positioning correct-ah irukka */
+  z-index: 1;
+  height:780px !important;
+} 
+    
+}
+
+
+/* 2K / Large Desktop */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .detail-hero {
+    height: 70vh !important;
+  }
+
+  .hero-title {
+    font-size: clamp(4rem, 4vw, 5.5rem) !important;
+    max-width: 1100px !important;
+    line-height: 1.05 !important;
+  }
+
+  .service-detail-root .cap-row {
+    width: 70% !important;
+    padding: 36px 50px !important;
+  }
+  .main-service-img {
+/* Ithu image-ai mela ethum */
+  position: relative; /* Positioning correct-ah irukka */
+  z-index: 1;
+  height:780px;
+} 
+  .cap-row h4 {
+    font-size: 18px !important;
+  }
+
+  .cap-row p {
+    font-size: 16px !important;
+  }
+
+  .precision-section .row.g-2 img {
+    height: 280px !important;
+  }
+
+  .service-desc-text,
+  .col-lg-6 .mb-3.text-black {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+    max-width: 1000px !important;
+  }
+
+  .serviceblog-swap-FAQ {
+    width: 240px !important;
+    height: 54px !important;
+  }
+
+  .serviceblog-swap-FAQ .text {
+    font-size: 13px !important;
+  }
+}
+
+/* 4K / Ultra Wide */
+@media (min-width: 2560px) {
+  .detail-hero {
+    height: 75vh !important;
+  }
+
+  .hero-title {
+    font-size: clamp(5rem, 4.5vw, 7rem) !important;
+    max-width: 1400px !important;
+    line-height: 1.05 !important;
+  }
+  
+   .main-service-img {
+/* Ithu image-ai mela ethum */
+  position: relative; /* Positioning correct-ah irukka */
+  z-index: 1;
+  height:910px;
+} 
+  .service-detail-root .cap-row {
+    width: 60% !important;
+    padding: 44px 70px !important;
+  }
+
+  .cap-row h4 {
+    font-size: 20px !important;
+  }
+
+  .cap-row p {
+    font-size: 18px !important;
+  }
+
+  .precision-section .row.g-2 img {
+    height: 340px !important;
+  }
+
+  .service-desc-text,
+  .col-lg-6 .mb-3.text-black {
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
+    max-width: 1200px !important;
+  }
+
+  .serviceblog-swap-FAQ {
+    width: 280px !important;
+    height: 60px !important;
+  }
+
+  .serviceblog-swap-FAQ .text {
+    font-size: 14px !important;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 1) !important;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media(max-width:768px){
+  .main-service-img{
+    height:350px;
+  }
+}

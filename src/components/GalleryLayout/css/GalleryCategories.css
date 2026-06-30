@@ -1,0 +1,109 @@
+/* --- SECTION RESET --- */
+.gallery-sections {
+  background-color: #000;
+  height: auto !important; /* Allow section to shrink */
+  overflow: hidden;
+}
+
+.transition-grid {
+  align-items: flex-start; /* Prevents vertical stretching */
+}
+
+/* --- TABS --- */
+.filter-tab {
+  background: transparent;
+  color: #666;
+  border: 1px solid #333;
+  padding: 8px 25px;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  
+  /* LAG FIX: Removed 'all', specific properties added */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.filter-tab.active {
+  background-color: #e38524;
+  color: #000;
+  border-color: #e38524;
+}
+
+/* --- CARDS --- */
+.mars-gallery-card {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+  
+  /* LAG FIX: Hardware Acceleration for the card container */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.img-container {
+  position: relative;
+  height: 280px; /* Fixed height for clean grid */
+  /* LAG FIX: Prevents edges from bleeding out during scaling */
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(40%);
+  
+  /* LAG FIX: Specific transition properties, 'all' removed */
+  transition: transform 0.5s ease-out, filter 0.5s ease-out;
+  
+  /* LAG FIX: Push image rendering to GPU */
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.mars-gallery-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05) translateZ(0); /* Maintain GPU acceleration during scale */
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  
+  /* LAG FIX: Only animate opacity, which is cheap for the browser */
+  transition: opacity 0.4s ease-out;
+  will-change: opacity;
+}
+
+.mars-gallery-card:hover .img-overlay {
+  opacity: 1;
+}
+
+.text-orange {
+  color: #e38524 !important;
+}
+
+.smaller {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+/* Mobile Fixes */
+@media (max-width: 576px) {
+  .img-container {
+    height: 250px;
+  }
+  .filter-tab {
+    padding: 6px 15px;
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,801 @@
+/* --- Root Styles & Variables --- */
+:root {
+  --mars-orange: #ff5f38;
+  --mars-cyan: #00f2ff;
+  --mars-black: #0a0a0a;
+  --mars-card-bg: #151515;
+  --mars-border: rgba(255, 255, 255, 0.1);
+}
+
+.mars-dossier-root {
+  background-color: var(--mars-black);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding-top:150px;
+  overflow-x: hidden;
+}
+
+/* --- Typography & Accents --- */
+.accent { color: var(--mars-orange); }
+.text-cyan { color: var(--mars-cyan); }
+.dossier-title { font-weight: 900; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -1px; }
+
+.system-status {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.dot.pulse {
+  height: 8px;
+  width: 8px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 10px #00ff00;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+}
+
+/* --- Card Grid & Animations --- */
+.dossier-card {
+  background: var(--mars-card-bg);
+  border: 1px solid var(--mars-border);
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-border-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--mars-orange), transparent);
+  z-index: 5;
+}
+
+.card-image {
+  height: 65%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+  position: relative;
+}
+
+/* Image Zoom Effect on Hover */
+.dossier-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--mars-card-bg));
+  z-index: 2;
+}
+
+/* Scanning Line Animation */
+.dossier-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 242, 255, 0.05),
+    transparent
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dossier-card:hover::after {
+  animation: scan 1.5s infinite linear;
+}
+
+@keyframes scan {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+.card-content {
+  padding: 25px;
+  position: relative;
+  z-index: 4;
+}
+
+.card-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-headline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* --- Banner Styles --- */
+.mission-banner {
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-stats .border-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+}
+
+.btn-scan {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Detail View --- */
+.detail-main-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border: 1px solid var(--mars-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.btn-back {
+  background: transparent;
+  border: 1px solid var(--mars-border);
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.side-telemetry {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--mars-border);
+  backdrop-filter: blur(10px);
+}
+
+/* --- Footer --- */
+.btn-footer-quote {
+  background: var(--mars-orange);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-weight: bold;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  transition: 0.3s;
+}
+
+.btn-footer-quote:hover {
+  background: #fff;
+  color: var(--mars-orange);
+  transform: translateY(-3px);
+}
+
+/* --- Responsive Fixes --- */
+@media (max-width: 768px) {
+  .banner-stats .border-left {
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .dossier-title { font-size: 2.5rem; }
+}
+
+/* --- Root & Layout --- */
+.mars-dossier-root {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- Header & Typography --- */
+.dossier-header {
+  border-left: 3px solid #ff5f38;
+  padding-left: 20px;
+}
+
+.system-status {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: #00f2ff;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.dot.pulse {
+  width: 8px;
+  height: 8px;
+  background: #00f2ff;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0 0 10px #00f2ff;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.dossier-title {
+  font-weight: 900;
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+}
+
+.accent {
+  color: #ff5f38;
+}
+
+/* --- Dossier Cards --- */
+.dossier-card {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+.card-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.text-cyan {
+  color: #00f2ff;
+}
+
+.card-headline {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* --- MISSION BANNER (The part you added) --- */
+.mission-banner {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.border-left-stat {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 20px;
+}
+
+.accent-orange-text {
+  color: #ff5f38 !important;
+}
+
+.btn-scan {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+/* --- INNOVATION CATEGORIES --- */
+.innovation-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 12px;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+}
+
+.innovation-card:hover {
+  background: rgba(255, 95, 56, 0.05);
+  border-color: #ff5f38;
+}
+
+.accent-orange {
+  color: #ff5f38;
+}
+
+.sec-title {
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* --- Detail View --- */
+.btn-back {
+  background: transparent;
+  border: 1px solid #ff5f38;
+  color: #ff5f38;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.detail-title {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.side-telemetry {
+  background: #111;
+  border-top: 2px solid #ff5f38;
+}
+
+/* --- Footer --- */
+.mars-footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-footer-quote {
+  background: #ff5f38;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .dossier-title { font-size: 2.2rem; }
+  .banner-title { font-size: 1.5rem; }
+  .border-left-stat {
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+  }
+}
+
+/* --- DETAIL VIEW STYLING --- */
+.detail-view-container {
+  padding-top: 20px;
+  animation: fadeInSlide 0.8s ease-out;
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dossier-title-detail {
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.btn-back {
+  background: transparent;
+  border: 1px solid rgba(255, 95, 56, 0.4);
+  color: #ff5f38;
+  padding: 8px 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-back:hover {
+  background: #ff5f38;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 95, 56, 0.4);
+  transform: translateX(-5px);
+}
+
+/* Sidebar & Telemetry Card */
+
+
+
+
+/* Technical Specs Grid */
+.specs-grid .p-3 {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.specs-grid .p-3:hover {
+  background: #1a1a1a !important;
+  border-color: #ff5f38 !important;
+}
+
+.specs-grid .p-3::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 2px; height: 0;
+  background: #ff5f38;
+  transition: height 0.3s ease;
+}
+
+.specs-grid .p-3:hover::before {
+  height: 100%;
+}
+
+/* --- MISSION BANNER ANIMATIONS --- */
+.mission-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-banner::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+  transform: skewX(-25deg);
+  animation: shine 6s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+/* Stats Counter Animation */
+.banner-stats p {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- INNOVATION CARDS --- */
+.innovation-card {
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.innovation-card:hover {
+  background: rgba(255, 95, 56, 0.08) !important;
+  border-color: #ff5f38 !important;
+  transform: translateY(-10px);
+}
+
+.accent-orange {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5f38;
+}
+
+/* Footer Button */
+.btn-footer-quote {
+  background: #ff5f38;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 95, 56, 0.3);
+}
+
+.btn-footer-quote:hover {
+  background: #fff;
+  color: #ff5f38;
+  transform: scale(1.05);
+}
+/* Card Container */
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden; /* Ithuthaan border veliya theriyaama thadukkum */
+  color: white;
+  font-family: sans-serif;
+}
+
+/* Moving Animation Layer */
+.card::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 140%;
+  background: linear-gradient(#00ccff, #d400ff);
+  animation: rotate 4s linear infinite;
+}
+
+/* Inner Card (Intha layer thaan content-ah cover pannum) */
+.card::after {
+  content: 'RUPD Safety Norms';
+  position: absolute;
+  inset: 4px; /* Border thickness inga thaan decide aagum */
+  background: #0e1538;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Keyframe for Rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Links Brightness & Hover */
+.footer-link {
+  color: #ffffff !important; /* Pure White */
+  opacity: 1 !important;     /* Transparency remove panniyaachu */
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+.footer-link:hover {
+  color: #00ccff !important; /* Hover panna light blue color */
+  padding-left: 5px;
+}
+
+/* Vertical lines separation */
+.footer-col {
+  border-right: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.footer-col:last-child {
+  border-right: none;
+}
+
+/* Horizontal line separation */
+.border-first-custom {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+}
+
+/* Address & Desc color fix */
+.footer-desc, .footer-col p {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+/* --- FOOTER QUERY SECTION --- */
+.footer-query-container {
+  padding: 60px 0;
+  border-top: 1px solid #222; /* Footer-ku mela oru separation */
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.query-wrapper {
+  width: 100%;
+  max-width: 700px; /* Form width ah control panna */
+  padding: 40px;
+  background: #0a0a0a; /* Subtle dark background */
+  border: 1px solid #333;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.query-wrapper h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Input Fields Styling */
+.footer-query-form .form-control {
+  background: #111 !important;
+  border: 1px solid #444 !important;
+  color: #fff !important;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.footer-query-form .form-control:focus {
+  border-color: #00ccff !important; /* Neon Focus Effect */
+  box-shadow: 0 0 8px rgba(0, 204, 255, 0.2) !important;
+  outline: none;
+}
+
+/* Textarea specific */
+.footer-query-form textarea.form-control {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Submit Button in Footer */
+.query-submit-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  width: auto;
+}
+
+.query-submit-btn:hover {
+  background: #00ccff;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 204, 255, 0.3);
+}
+
+/* Responsive Fix */
+@media (max-width: 576px) {
+  .query-wrapper {
+    padding: 25px;
+    margin: 0 15px;
+  }
+}
+/* Global Reset for all pages */
+body {
+    background-color: #0a0a0a;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Button hover effects - reusable */
+.btn-common {
+    padding: 10px 20px;
+    border: 1px solid #ff5f38;
+    color: #ff5f38;
+    background: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-common:hover {
+    background: #ff5f38;
+    color: #fff;
+}
+
+.dossier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dossier-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px;
+}
+
+.dossier-grid .col-lg-4,
+.dossier-grid .col-md-6,
+.dossier-grid .col-12 {
+  display: flex;
+}
+
+.dossier-card {
+  width: 100% !important;
+  min-height: 450px;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.dossier-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px;
+}
+
+.dossier-grid .col-12,
+.dossier-grid .col-md-6,
+.dossier-grid .col-lg-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: unset !important;
+}
+
+.dossier-card {
+    width: 100%;
+    height: 450px;
+}
+@media (max-width: 992px) {
+    .dossier-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .dossier-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

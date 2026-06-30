@@ -1,0 +1,41 @@
+.map-section-wrapper {
+    background-color: #000; /* Matches the dark MARS theme */
+    padding: 60px 0;
+    width: 100%;
+}
+
+.map-container {
+    width: 90%;
+    max-width: 1400px; /* Safety brake for 2560px monitors */
+    margin: 0 auto;
+}
+
+.map-info {
+    margin-bottom: 20px;
+    border-left: 4px solid #ff6600; /* Orange accent from your submit button */
+    padding-left: 20px;
+}
+
+.map-info .info-title {
+    font-family: 'Bank Gothic Light', sans-serif !important;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.map-text {
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.map-frame {
+    filter: grayscale(1) invert(0.9) contrast(1.2); /* Makes the map look "Industrial Dark" */
+    border: 1px solid #333;
+    transition: filter 0.5s ease;
+}
+
+.map-frame:hover {
+    filter: grayscale(0) invert(0) contrast(1); /* Returns to color on hover */
+}

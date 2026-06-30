@@ -1,0 +1,89 @@
+.comparison-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 500px !important;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid #222;
+  user-select: none; 
+  /* Cursor ew-resize-a inga irunthu eduthutten */
+}
+
+/* Drag aagum pothu mattum container muzhusum ew-resize cursor varum */
+.comparison-wrapper.dragging {
+  cursor: ew-resize;
+}
+
+.comparison-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none; 
+}
+
+.mars-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: none; 
+}
+
+.slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e38524;
+  z-index: 10;
+  pointer-events: none; /* Line-a click panna koodathu */
+}
+
+.slider-handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background-color: #e38524;
+  border: 3px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(227, 133, 36, 0.5);
+  
+  /* PUDHU FIX: Circle kitta mattum click aga allow panrom */
+  pointer-events: auto; 
+  cursor: grab; /* Normal-a grab (kai) symbol varum */
+}
+
+/* Circle-a drag panrappa grabbing symbol varum */
+.comparison-wrapper.dragging .slider-handle-circle {
+  cursor: grabbing;
+}
+
+.badge-glass {
+  position: absolute;
+  top: 20px;
+  padding: 8px 8px;
+  font-weight: 900;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  z-index: 15;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.badge-left { left: 20px; background: rgba(0,0,0,0.7); color: #888; }
+.badge-right { right: 20px; background: rgba(227, 133, 36, 0.9); color: #000; }

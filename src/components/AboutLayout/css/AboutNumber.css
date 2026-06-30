@@ -1,0 +1,146 @@
+/* Custom Max-Width for Ultra-Wide Screens (2560px) */
+@media (min-width: 1400px) {
+  .container-xxl, .container {
+    max-width: 1320px; /* Standard Bootstrap XXL */
+  }
+}
+
+/* Specific fix for your 2560px screen */
+@media (min-width: 2000px) {
+  .container-xxl, .container {
+    max-width: 1800px; /* This makes the content wider to match your 2nd image */
+    margin-left: auto;
+    margin-right: auto;
+    transition:all 0.9s ease !important;
+  }
+
+  /* Adjusting the heading size for massive screens so it doesn't look small */
+  .about-heading {
+    font-size: 48px !important; 
+    line-height: 1.2;
+  }
+
+ 
+}
+/* --- Global Section & Grid Styling --- */
+.about-counter-section { background: #ffffff;  }
+
+.leadership-grid { 
+    border: 1px solid #eeeeee; 
+    background: #fff; 
+    margin-top: 40px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.leadership-cards { 
+    padding: 45px 35px; 
+    border-right: 1px solid #eeeeee; 
+    display: flex; 
+    flex-direction: column; 
+    
+   
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+}
+
+.leadership-cards:hover{
+    background:#e38524;
+    transform:scale(1.05);
+    border:none;
+    z-index:999;
+
+}
+
+.leadership-cards:last-child { border-right: none; }
+
+/* --- THE SECRET ALIGNMENT RESET (Horizontal Force) --- */
+
+.card-big-number {
+    font-size: 4rem; 
+    font-weight: 800;
+    color: #000;
+    margin: 0 !important;
+    display: flex !important; /* Side-by-side force */
+    align-items: baseline !important; /* Perfect straight line axis */
+    letter-spacing: -2px;
+    line-height: 1 !important;
+}
+
+.slot-wrapper-inline {
+    display: inline-flex !important; /* Prevents vertical stacking */
+    align-items: baseline !important;
+    height: 1.1em !important; /* Frame height manual lock */
+    overflow: hidden;
+    vertical-align: baseline !important;
+}
+
+.digit-column {
+    display: inline-flex !important; 
+    flex-direction: column !important;
+    height: 1.1em !important;
+    width: auto !important;
+}
+
+.digit-strip {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.digit-strip span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 1.1em !important; /* Sync height with frame */
+    line-height: 1.1em !important;
+}
+
+/* Suffix & Static Chars (+, %, ., K) Alignment */
+.stat-suffix, 
+.slot-static-char {
+    display: inline-block !important;
+    vertical-align: baseline !important; /* Forces same horizontal axis */
+    line-height: 1 !important;
+    margin-left: 2px;
+}
+
+/* Typography Details */
+.leadership-main-title {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.card-mini-title {
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-desc-text {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #161616;
+}
+
+/* Responsive Fix */
+@media (max-width: 991px) {
+    .leadership-cards {
+        border-right: none;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+
+}
+@media (max-width:425px){
+    .leadership-main-title{
+        width:300px !important;
+    }
+
+    
+.card-big-number {
+    font-size: 2.5rem;
+}
+}

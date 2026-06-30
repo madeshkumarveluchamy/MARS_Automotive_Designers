@@ -1,0 +1,300 @@
+/* ==========================================================================
+   MAIN CANVAS & FONTS
+   ========================================================================== */
+.innovation-section {
+    background-color: #222222;
+    padding: 80px 0;
+}
+
+.list-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.list-desc {
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+.text-orange-small {
+    color: #999999; 
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.innovation-main-title {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.3;
+    max-width: 750px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   DOM MEMORY LAYER PRE-CACHE CONFIGURATION
+   ========================================================================== */
+.mobile-pre-cache-layer {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ==========================================================================
+   DESKTOP SCREEN LAYOUT: ORIGINAL WORKING STRIPER
+   ========================================================================== */
+.innovation-img-frame {
+    width: 100%;
+    height: 450px; 
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.desktop-image-striper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.desktop-image-striper img {
+    width: 100%;
+    height: 450px;
+    object-fit: fill;
+    object-position: 50% 100%; 
+    filter: grayscale(10%) brightness(0.95);
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   ROW ELEMENT ANIMATION (HOVER & ACTIVE EFFECTS)
+   ========================================================================== */
+.innovation-list-container {
+    border-top: 1px solid #333333;
+}
+
+.list-item-wrapper-responsive {
+    border-bottom: 1px solid #333333;
+}
+
+.innovation-list-item {
+    padding: 38px 20px;
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.2s ease;
+}
+
+@media(min-width:2000px){
+    .innovation-list-item {
+    padding: 48px 20px;
+    }
+}
+
+.innovation-list-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdfae6; 
+    z-index: -1; 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.innovation-list-item.active-row::after {
+    transform: scaleX(1);
+}
+
+.active-row .list-title, 
+.active-row .list-desc,
+.active-row .list-arrow {
+    color: #000000 !important;
+}
+
+.list-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Base Setup Configurations (Desktop Defaults) */
+.mobile-accordion-panel {
+    display: none;
+}
+
+.hidden-desc-control {
+    display: none !important;
+}
+
+/* ==========================================================================
+   CTA HEADER BUTTON STYLINGS
+   ========================================================================== */
+.blog-swap-Innovation {
+    display: flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    width: 180px !important; 
+    height: 50px !important;
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+.blog-swap-Innovation .arrow {
+    position: absolute;
+    left: 0;
+    background: #fff;
+    color: #000;
+    width: 45px; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 2;
+}
+
+.blog-swap-Innovation .text {
+    width: 100%;
+    text-align: center;
+    padding-left: 35px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.blog-swap-Innovation:hover .arrow {
+    transform: translateX(135px); 
+}
+
+.blog-swap-Innovation:hover .text {
+    transform: translateX(-35px); 
+}
+
+.blog-swap-Innovation:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES: TARGETED 768px TO 994px WIDTH LOCK ENGINE
+   ========================================================================== */
+@media (max-width: 994px) {
+    /* Safe concealment layer rules for conflicting tablet layouts */
+    .desktop-frame-hide {
+        display: none !important;
+    }
+
+    .inline-desc-responsive {
+        display: none !important;
+    }
+
+    .hidden-desc-control {
+        display: block !important;
+    }
+
+    /* Hardware Accelerator Grid Smooth Slider for Tablet & Mobile Viewports */
+    .mobile-accordion-panel.responsive-accordion-show {
+        display: grid !important; 
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        background-color: #fdfae6;
+        transition: grid-template-rows 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+        contain: content;
+    }
+
+    .mobile-accordion-panel.responsive-accordion-show.panel-open {
+        grid-template-rows: 1fr;
+        max-height: none !important;
+    }
+
+    .mobile-panel-inner {
+        min-height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+    }
+
+    .panel-open .mobile-panel-inner {
+        opacity: 1;
+        transition-delay: 0.02s;
+    }
+
+    .mobile-gpu-img {
+        width: 100%;
+        max-height: 380px; 
+        object-fit: cover;
+        transform: translate3d(0, 0, 0); 
+        backface-visibility: hidden;
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Core Responsive List Control Flows */
+    .innovation-list-item {
+        padding: 22px 16px;
+        display: block !important; 
+    }
+
+    .innovation-list-item .row {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important; 
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .innovation-list-item .col-10, 
+    .innovation-list-item .col-2 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .innovation-list-item .text-end {
+        text-align: right !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+
+    .list-arrow {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        transition: transform 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .innovation-list-item::after {
+        transform-origin: center !important;
+        transition: none !important; 
+    }
+
+    .list-arrow.rotated {
+        transform: rotate(90deg); 
+    }
+}
+
+@media (max-width: 576px) {
+    .innovation-main-title { font-size: 20px; }
+    .blog-swap-Innovation { width: 150px !important; height: 42px !important; }
+    .blog-swap-Innovation .arrow { width: 38px; }
+    .blog-swap-Innovation:hover .arrow { transform: translateX(112px); }
+}

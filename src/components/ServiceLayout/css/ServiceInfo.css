@@ -1,0 +1,81 @@
+/* Container and Columns */
+.contact-info-col {
+  border-right: 1px solid #eeeeee;
+  min-height: 380px; /* Slightly taller for breathing room */
+}
+.contact-info-col:hover {
+  background:#e38524;
+  transition:scale 0.8 ease;
+  border-right: 1px solid #eeeeee;
+  min-height: 380px; /* Slightly taller for breathing room */
+}
+
+
+.contact-info-col:last-child {
+  border-right: none;
+}
+
+/* --- THE PIXEL-PERFECT ICON CSS --- */
+.contact-icon-wrapper {
+  height: 40px; /* Force the exact height box seen in the image */
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns left by default */
+}
+
+
+
+.contact-icon-img {
+  height: 100%; /* Icons will never exceed 40px height */
+  width: auto; /* Keeps width in proportion */
+  object-fit: contain; /* Prevents stretching */
+}
+
+/* Typography remains the same */
+.contact-info-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.contact-info-col:hover .contact-info-title{
+  color:white;
+}
+
+.contact-info-details {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 250px;
+  color: #666;
+}
+
+.contact-info-col:hover .contact-info-details{
+  color:white;
+}
+
+.contact-info-link {
+  color: #e38524; /* Theme Orange */
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.contact-info-col:hover .contact-info-link {
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* Responsive adjustment for Mobile (center everything) */
+@media (max-width: 768px) {
+  .contact-info-col {
+    border-right: none;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .contact-icon-wrapper {
+    justify-content: center; /* Center icons on mobile */
+  }
+}

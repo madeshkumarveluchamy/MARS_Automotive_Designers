@@ -1,0 +1,222 @@
+.mars-eng-flow-bg {
+  background-color: #0A0A0A; /* Slightly darker for better contrast */
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* --- Title Styles --- */
+.mars-eng-subtitle {
+  color: #E38524;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mars-eng-flow-title {
+  font-weight: 900;
+  font-size: 3rem; 
+  letter-spacing: -1px;
+}
+
+.mars-eng-title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: #E38524;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.mars-eng-flow-container {
+  max-width: 1000px; /* Tighter width looks better on desktop */
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
+}
+
+/* --- THE VERTICAL LINES --- */
+.mars-eng-base-line {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  bottom: 80px; 
+  width: 2px;
+  /* Cool dashed effect for the empty track */
+  background-image: linear-gradient(#333 50%, transparent 50%);
+  background-size: 100% 15px;
+  margin-left: -1px;
+  z-index: 1;
+}
+
+.mars-eng-filling-line {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  bottom: 80px; 
+  width: 4px; /* Slightly thicker than the base */
+  background-color: #E38524 !important;
+  margin-left: -2px;
+  z-index: 3 !important; 
+  /* Awesome Orange Glow */
+  box-shadow: 0 0 15px rgba(227, 133, 36, 0.8), 0 0 30px rgba(227, 133, 36, 0.4);
+  transform-origin: top; 
+}
+
+/* --- STEP CIRCLES (Replaced Boxes with Circles) --- */
+.mars-eng-step-box-large {
+  width: 80px; 
+  height: 80px;
+  background-color: #0A0A0A;
+  border: 3px solid #333;
+  border-radius: 50%; /* Circle looks more modern */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.mars-eng-step-num-large {
+  color: #555;
+  font-weight: 900;
+  font-size: 1.6rem; 
+  transition: all 0.5s ease;
+}
+
+/* When the line reaches the step (Triggered by React state) */
+.mars-eng-step-box-large.active-step {
+  border-color: #E38524;
+  background-color: #1A120B; /* Subtle orange tint in background */
+  box-shadow: 0 0 20px rgba(227, 133, 36, 0.5);
+  transform: scale(1.1); /* Slight pop out effect */
+}
+
+.mars-eng-step-box-large.active-step .mars-eng-step-num-large {
+  color: #E38524;
+  text-shadow: 0 0 10px rgba(227, 133, 36, 0.5);
+}
+
+/* --- Content Styling --- */
+.mars-eng-step-content h3 {
+  font-weight: 800;
+  font-size: 1.6rem; 
+  letter-spacing: 0px;
+}
+
+.mars-eng-tracking-wide {
+  letter-spacing: 1.2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Space out the steps more vertically */
+.mars-eng-step-row {
+  margin-bottom: 100px !important; 
+}
+
+/* --- Mobile Responsive --- */
+/* ========================================================
+   📱 TABLET & MOBILE RESPONSIVE VIEW (< 991px)
+======================================================== */
+/* ========================================================
+   📱 TABLET & MOBILE RESPONSIVE VIEW (< 991px)
+======================================================== */
+@media (max-width: 748px) { 
+  .mars-eng-flow-container { 
+    padding-left: 15px; 
+    padding-right: 15px; 
+  }
+
+  /* 1. கோடுகளை மிகத் துல்லியமாக 40px-ல் நிறுத்துகிறோம் */
+  .mars-eng-base-line {
+    left: 55px !important;
+    margin-left: -1px !important; /* 2px லைன் சென்டராக இருக்க */
+    transform: none !important;
+  }
+  
+  .mars-eng-filling-line {
+    left: 55px !important;
+    margin-left: -2px !important; /* 4px லைன் சென்டராக இருக்க */
+    transform: none !important;
+  }
+
+  /* 2. ரோசை நேராக்குகிறோம் */
+  .mars-eng-step-row {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    margin-bottom: 70px !important;
+    position: relative;
+  }
+
+  /* 3. 🎯 100% PERFECT FIX: சர்க்கிளைச் சரியாக 40px-ல் மையப்படுத்துகிறோம் */
+  .mars-eng-step-row .col-2 {
+    position: absolute !important;
+    left: 40px !important; /* லைன் இருக்கும் அதே இடம் */
+    top: 0;
+    width: 0px !important; /* 💡 0px கொடுத்தால் சர்க்கிள் கோட்டின் மீது இரண்டு பக்கமும் சரிசமமாக உட்காரும் */
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    transform: none !important;
+    z-index: 5;
+    overflow: visible !important;
+  }
+
+  /* 4. டெக்ஸ்ட் கன்டைனர் */
+  .mars-eng-step-row .col-5:nth-child(1) {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding-left: 95px !important;
+    padding-right: 15px !important;
+  }
+
+  .mars-eng-step-row .col-5:nth-child(3) {
+    display: none !important;
+  }
+
+  .mars-eng-step-content {
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  .mars-eng-step-box-large {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0; /* சர்க்கிள் நசுங்காமல் இருக்க */
+  }
+  .mars-eng-step-num-large {
+    font-size: 1.3rem;
+  }
+}
+
+/* ========================================================
+   📱 SMALL MOBILE PHONES (< 575px)
+======================================================== */
+@media (max-width: 575px) {
+  .mars-eng-flow-title {
+    font-size: 2.2rem;
+  }
+  
+  .mars-eng-step-box-large {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+  }
+  .mars-eng-step-num-large {
+    font-size: 1.1rem;
+  }
+  
+  .mars-eng-step-content h3 {
+    font-size: 1.25rem !important;
+    margin-top: 5px; /* சர்க்கிளோடு நேராகத் தெரிய */
+  }
+  .mars-eng-service-desc {
+    font-size: 0.8rem !important;
+  }
+  .mars-eng-step-row .col-5:nth-child(1) {
+    padding-left: 80px !important; /* சின்ன சர்க்கிள் என்பதால் பேடிங் குறைப்பு */
+  }
+}

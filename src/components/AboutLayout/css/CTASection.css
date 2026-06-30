@@ -1,0 +1,29 @@
+.cta-title {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 5.5rem); /* Responsive huge text */
+  line-height: 0.9;
+  color: #1a1a1a;
+  letter-spacing: px;
+}
+
+/* Orange Button Styling */
+.cta-btn {
+  background-color: #e38524 !important; /* Theme Orange */
+  color: #ffffff !important;
+  border-radius: 0; /* Flat edges like the image */
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+.cta-btn:hover {
+  background-color: #c4711e !important; /* Darker orange on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(227, 133, 36, 0.3);
+}
+
+/* Optional: Add a subtle border to the section to separate it from others */
+.cta-section {
+  border-top: 1px solid #f0f0f0;
+}

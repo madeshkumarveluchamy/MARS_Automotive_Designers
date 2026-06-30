@@ -1,0 +1,90 @@
+.bg-light-grey {
+  background-color: #F8F8F8; /* Light off-white background */
+}
+
+/* Background "MARS" Watermark */
+.bg-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25vw; /* Extremely large */
+  font-weight: 900;
+  color: #000;
+  opacity: 0.03; /* Barely visible */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-heading {
+  line-height: 0.9;
+  letter-spacing: -2px;
+  color: #1A1A1A;
+}
+
+/* The Gradient Button */
+.engineer-btn {
+  background: linear-gradient(to right, #9C5100, #E38524);
+  color: white;
+  border: none;
+  padding: 20px 50px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  box-shadow: 0 15px 35px rgba(156, 81, 0, 0.35);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.engineer-btn:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(156, 81, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+.text-orange {
+  color: #E38524 !important;
+  font-size: 2rem;
+}
+
+.smaller {
+  font-size: 0.65rem;
+}
+
+.tracking-widest {
+  letter-spacing: 2px;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+/* Remove extra space between sections */
+.revolution-section {
+  padding-top: 50px !important; /* Adjust as needed */
+  padding-bottom: 50px !important;
+  margin: 0 !important;
+}
+
+/* Tighten the space under the title */
+.revolution-section h1 {
+  margin-bottom: 20px !important;
+}
+
+.comparison-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: ew-resize;
+  /* Use aspect ratio to prevent extra vertical space */
+  aspect-ratio: 16 / 9; 
+  height: auto; 
+}
+
+.comparison-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the area without gaps */
+  display: block;
+}

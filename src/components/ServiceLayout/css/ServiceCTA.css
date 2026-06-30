@@ -1,0 +1,37 @@
+.service-cta-bg {
+  background-color: #ffffff; /* Pure white background */
+  padding: 120px 0;
+}
+
+.cta-main-title {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* Huge responsive font */
+  line-height: 1;
+  color: #1a1a1a;
+  letter-spacing: -2px;
+}
+
+/* Gradient Button Styling */
+.cta-gradient-btn {
+  /* Exact gradient from your image: dark orange to light orange */
+  background: linear-gradient(135deg, #a45100 0%, #e38524 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important; /* Sharp corners */
+  padding: 20px 60px !important;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 30px rgba(164, 81, 0, 0.3); /* Soft orange shadow */
+  transition: all 0.4s ease !important;
+}
+
+.cta-gradient-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(164, 81, 0, 0.5);
+  filter: brightness(1.1); /* Makes the gradient pop more on hover */
+}
+
+/* Optional: Add a subtle border to separate from previous dark sections */
+.service-cta-bg {
+  border-top: 1px solid #f0f0f0;
+}
