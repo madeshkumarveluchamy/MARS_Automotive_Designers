@@ -63,10 +63,12 @@ const FAQSection = () => {
 
         {/* Bottom Button */}
         <div className="text-center mt-5 d-flex justify-content-center">
+          <a className='text-decoration-none' href='#contactform'>
           <button className="still-questions-btn blog-swap-FAQs">
             <span className="arrow">→</span>
             <span className="text">STILL HAVE QUESTIONS?</span>
           </button>
+          </a>
         </div>
       </div>
     </section>

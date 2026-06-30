@@ -45,7 +45,7 @@ const forceScroll = () => {
                 Advancing innovation in heavy vehicle body manufacturing with efficient and responsible production practices.
               </p>
               <div className="d-flex justify-content-center justify-content-md-start">
-              <Link to="/contact-us" className="text-decoration-none">
+              <Link to="/contact-us" onClick={forceScroll} className="text-decoration-none">
                 <button className="mt-3 blog-swap-Footers">
                   <span className="arrows">→</span>
                   <span className="texts">GET A QUOTE</span>

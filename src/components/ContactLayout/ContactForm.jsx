@@ -7,7 +7,7 @@ import ContactForms from './ContactForms';
 
 const ContactForm = () => {
   return (
-    <section className="contact-form-section bg-custom-dark text-white py-5" data-bg="white">
+    <section className="contact-form-section bg-custom-dark text-white py-5" data-bg="white" id="contactform">
       <div className="container-fluid p-0">
         <div className="row g-0 align-items-stretch">
           
