@@ -1,74 +1,195 @@
-import React, { useState } from "react";
-import "./css/SustainableManufacturing.css";
+import React, { useState, useRef, useEffect } from 'react';
+import './css/SustainableManufacturing.css';
 
-// Assets imports
-import MARS_PORTFOLIO_IMAGES1 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (1).webp"
-import MARS_PORTFOLIO_IMAGES2 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (2).webp"
-import MARS_PORTFOLIO_IMAGES3 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (3).webp"
-import MARS_PORTFOLIO_IMAGES4 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (4).webp"
-import MARS_PORTFOLIO_IMAGES5 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (5).webp"
-import MARS_PORTFOLIO_IMAGES6 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (6).webp"
-import MARS_PORTFOLIO_IMAGES7 from "../../assets/mars-solutions/MARS-PORTFOLIO-IMAGES (7).webp"
-import { Link } from "react-router-dom";
+import reviewVideo1 from '../../assets/bg-videos.mp4';
+import user1 from '../../assets/user1.webp';
+import user2 from '../../assets/user2.webp';
+import user3 from '../../assets/user3.webp';
+import user4 from '../../assets/user4.webp';
 
-const SustainableManufacturing = () => {
-  const [active, setActive] = useState(null);
-  const [pauseOrbit, setPauseOrbit] = useState(false);
+const UnimaxxReviews = () => {
+  const [activeVideoIndex, setActiveVideoIndex] = useState(null);
+  
+  // 1. அதிகப்படியான Re-render களைத் தவிர்க்க State-க்கு பதிலாக useRef பயன்படுத்தப்பட்டுள்ளது (Very Important for Performance)
+  const isDragging = useRef(false);
+  const isMoved = useRef(false); 
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
-  const orbitalImages = [
-    { img: MARS_PORTFOLIO_IMAGES1, name: "Shakthi", city: "Tanjavur", desc: "The precision of their robotic welding is unmatched. Our vehicle bodies feel incredibly solid.", rating: 5 },
-    { img: MARS_PORTFOLIO_IMAGES2, name: "Murugan", city: "Coimbatore", desc: "Industrial strength at its best! MARS delivered a custom heavy vehicle body that handles extreme loads.", rating: 5 },
-    { img: MARS_PORTFOLIO_IMAGES3, name: "Ravi", city: "Chennai", desc: "Exceptional container engineering. The panel insulation works perfectly for our temperature-sensitive cargo.", rating: 5 },
-    { img: MARS_PORTFOLIO_IMAGES4, name: "Ashok", city: "Trichy", desc: "Highly impressed with the truck assembly line. The turnaround time was quick and professional.", rating: 5 },
-    { img: MARS_PORTFOLIO_IMAGES5, name: "Kavin", city: "Salem", desc: "Their automated fabrication process has significantly improved our fleet's reliability.", rating: 5 },
-    { img: MARS_PORTFOLIO_IMAGES6, name: "Mithun", city: "Erode", desc: "Top-tier servicing and inspection. They catch the smallest details during maintenance.", rating: 5 },
-    { img: MARS_PORTFOLIO_IMAGES7, name: "Krishna", city: "karur", desc: "A truly modern manufacturing facility. Their team provided practical solutions with great care.", rating: 5 }
+  const initialReviewsData = [
+    { id: 1, thumbnailUrl: user1, videoUrl: reviewVideo1 },
+    { id: 2, thumbnailUrl: user2, videoUrl: reviewVideo1 },
+    { id: 3, thumbnailUrl: user3, videoUrl: reviewVideo1 },
+    { id: 4, thumbnailUrl: user4, videoUrl: reviewVideo1 }
   ];
 
+  const extendedReviewsData = [...initialReviewsData, ...initialReviewsData];
+
+  const videoRefs = useRef([]);
+  const sliderRef = useRef(null);
+  const [loopResetPoint, setLoopResetPoint] = useState(0);
+
+  useEffect(() => {
+    if (sliderRef.current) {
+      setLoopResetPoint(sliderRef.current.scrollWidth / 2);
+    }
+  }, [extendedReviewsData]);
+
+  // Auto-scroll logic 
+  useEffect(() => {
+    if (!sliderRef.current || loopResetPoint === 0) return;
+    let intervalId = null;
+    const startAutoScroll = () => {
+      intervalId = setInterval(() => {
+        // useRef மதிப்பை (.current) வைத்து சரிபார்க்கிறோம்
+        if (isDragging.current || activeVideoIndex !== null) return;
+        
+        let newScrollLeft = sliderRef.current.scrollLeft + 1;
+        if (newScrollLeft >= loopResetPoint) {
+          newScrollLeft = 0;
+        }
+        sliderRef.current.scrollLeft = newScrollLeft;
+      }, 20); 
+    };
+    startAutoScroll();
+    return () => clearInterval(intervalId);
+  }, [activeVideoIndex, loopResetPoint]); // isDragging dependency-ல் இருந்து நீக்கப்பட்டுள்ளது
+
+  // ==========================================
+  // DESKTOP MOUSE EVENTS 
+  // ==========================================
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    isMoved.current = false; 
+    startX.current = e.pageX - sliderRef.current.offsetLeft;
+    scrollLeft.current = sliderRef.current.scrollLeft;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    if (Math.abs(x - startX.current) > 5) {
+      isMoved.current = true; 
+    }
+    
+    const walk = (x - startX.current) * 2;
+    sliderRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    isDragging.current = false;
+    setTimeout(() => {
+      isMoved.current = false;
+    }, 50);
+  };
+
+  // ==========================================
+  // MOBILE TOUCH EVENTS 
+  // ==========================================
+  const handleTouchStart = () => {
+    isDragging.current = true;
+    isMoved.current = false;
+  };
+
+  const handleTouchMove = () => {
+    isMoved.current = true; 
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+    setTimeout(() => {
+      isMoved.current = false;
+    }, 50);
+  };
+
+  // ==========================================
+  // CLICK (Play / Pause)
+  // ==========================================
+  const handleCardClick = (index) => {
+    if (isMoved.current) return; // Drag செய்திருந்தால் கிளிக் ஆகாது
+
+    const targetVideo = videoRefs.current[index];
+
+    if (activeVideoIndex === index) {
+      if (targetVideo) targetVideo.pause();
+      setActiveVideoIndex(null); 
+    } else {
+      if (activeVideoIndex !== null && videoRefs.current[activeVideoIndex]) {
+        const prevVideo = videoRefs.current[activeVideoIndex];
+        prevVideo.pause();
+        prevVideo.currentTime = 0; 
+      }
+      if (targetVideo) {
+        targetVideo.play().catch(() => {});
+      }
+      setActiveVideoIndex(index); 
+    }
+  };
+
   return (
-    <section className="sm-core-section">
-      <div className="container sm-orbit-container">
-        <div className="sm-center-block text-center">
-          <p className="sm-sub-heading">SUSTAINABLE MANUFACTURING</p>
-          <h2 className="sm-main-heading">BUILT WITH PRECISION <br /> DELIVERED WITH SAFETY AND STRENGTH</h2>
-          <Link className="text-decoration-none" to="/contact-us">
-          <button className="sm-hover-swap-btn">
-            <span className="sm-btn-arrow">→</span>
-            <span className="sm-btn-label">DRIVE INNOVATION</span>
-          </button>
-          </Link>
+    <div className="um-reviews-master">
+      <section className="um-reviews-section">
+        <div className="um-reviews-header">
+          <h2 className='font-serief'>SUSTAINABLE MANUFACTURING</h2>
         </div>
 
-        <div className={`sm-orbit-ring ${pauseOrbit ? "sm-orbit-paused" : ""}`}>
-          {orbitalImages.map((item, index) => (
-            <div
-              key={index}
-              className={`sm-orbit-node ${active === index ? "is-node-active" : ""}`}
-              style={{ "--index": index, "--total": orbitalImages.length }}
-              onClick={() => {
-                setActive(index);
-                setPauseOrbit(true);
-                setTimeout(() => { setActive(null); setPauseOrbit(false); }, 2000);
-              }}
-            >
-              <div className="sm-node-stabilizer">
-                <img src={item.img} alt="mars" className="sm-node-image" />
-                <div className="sm-node-overlay">VIEW</div>
-                <div className="sm-node-details">
-                  <div className="d-flex flex-column flex-d-row align-items-center justify-content-center gap-2 mb-1">
-                    <div className="sm-client-name">{item.name}</div>
-                    <span className="sm-client-city">{item.city}</span>
+        <div
+          className="um-reviews-carousel"
+          ref={sliderRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {extendedReviewsData.map((review, index) => {
+            const isPlaying = activeVideoIndex === index;
+
+            return (
+              <div
+                key={index}
+                className={`um-review-card ${isPlaying ? 'video-active' : ''}`}
+                onClick={() => handleCardClick(index)}
+              >
+                {/* 2. கண்ணுக்குத் தெரியாத Overlay - வீடியோ Swipe-ஐ தடுப்பதில் இருந்து காக்க */}
+                <div className="um-card-touch-overlay"></div>
+
+                {!isPlaying && (
+                  <img 
+                    src={review.thumbnailUrl} 
+                    className="um-card-thumbnail" 
+                    alt="Thumbnail" 
+                    draggable="false" 
+                  />
+                )}
+
+                <video
+                  ref={(el) => (videoRefs.current[index] = el)}
+                  src={review.videoUrl}
+                  className="um-card-video-bg"
+                  loop
+                  muted
+                  playsInline
+                  draggable="false"
+                />
+
+                {!isPlaying && (
+                  <div className="um-center-play-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
                   </div>
-                  <div className="sm-client-rating mb-2">★★★★★</div>
-                  <p>{item.desc}</p>
-                </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
-export default SustainableManufacturing;
+export default UnimaxxReviews;

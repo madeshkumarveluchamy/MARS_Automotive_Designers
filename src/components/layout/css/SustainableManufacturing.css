@@ -1,407 +1,179 @@
-/* =========================================
-   1. BASE SECTION & LAYOUT
-========================================= */
-.sm-core-section {
-  background-color: #ffffff;
+.um-reviews-master {
+  width: 100%; 
+  max-width: 100vw;
+  background-color: #ffffff; 
   display: flex;
-  align-items: center;
   justify-content: center;
   overflow: hidden; 
-  position: relative;
-  padding: 90px 0;
+  box-sizing: border-box;
 }
 
-.sm-orbit-container {
-  position: relative;
-  width: 650px; 
-  height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sm-center-block {
-  z-index: 20;
-  max-width: 400px;
-  position: relative;
-  text-align: center;
-}
-
-.sm-sub-heading {
-  font-family: 'Michroma', sans-serif !important;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.sm-main-heading {
-  font-size: 20px; 
-  font-weight: 900;
-  line-height: 1.1;
-  color: #000;
-  margin-top: 10px;
-  text-transform: uppercase;
-}
-
-/* =========================================
-   2. ORBIT STRUCTURE & ANIMATIONS
-========================================= */
-.sm-orbit-ring {
-  position: absolute;
-  width: 600px; 
-  height: 600px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: orbitRotate 40s linear infinite;
-  z-index: 40;
-}
-
-.sm-orbit-ring.sm-orbit-paused {
-  animation-play-state: paused;
-}
-
-.sm-orbit-node {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 140px; 
-  height: 100px;
-  margin-top: -50px; 
-  margin-left: -70px;
-  transform: 
-    rotate(calc(360deg / var(--total) * var(--index))) 
-    translate(300px) 
-    rotate(calc(-360deg / var(--total) * var(--index))); 
-  z-index: 1; /* Base z-index */
-  transition: z-index 0.3s;
-}
-
-/* Yentha item open aagutho athu munnadi varanum */
-.sm-orbit-node:hover,
-.sm-orbit-node.is-node-active,
-.sm-orbit-node:focus-within {
-  z-index: 100 !important;
-}
-
-.sm-node-stabilizer {
+.um-reviews-section {
   width: 100%;
-  height: 100%;
+  max-width: 2000px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+.um-reviews-header {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  animation: counterRotate 40s linear infinite;
 }
 
-.sm-orbit-paused .sm-node-stabilizer {
-  animation-play-state: paused;
-}
-
-.sm-node-image {
-  width: 110%;
-  height: 100%;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  object-fit: cover;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-/* Pause animations on hover */
-.sm-orbit-ring:hover,
-.sm-orbit-ring:hover .sm-orbit-node,
-.sm-orbit-ring:hover .sm-node-stabilizer {
-  animation-play-state: paused !important;
-}
-
-/* Keyframes */
-@keyframes orbitRotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes counterRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); } 
-}
-
-/* =========================================
-   3. ORBIT CONTENTS & OVERLAY
-========================================= */
-.sm-node-details {
-  position: absolute;
-  bottom: -150px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;
-  height: 190px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-radius: 5px;
+.um-reviews-header h2 {
+  font-family: 'Georgia', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  max-width: 800px;
+  line-height: 1.25;
+  margin: 0 auto;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  opacity: 0; 
-  pointer-events: none;
-  transition: 0.35s ease;
-  z-index: 999 !important; /* Card yellathatkum mela irukka z-index athigamakapattullathu */
 }
 
-.sm-orbit-node.is-node-active .sm-node-details,
-.sm-orbit-node:hover .sm-node-details {
-  bottom: -10px;
-  opacity: 1;
-  pointer-events: auto;
+/* ===================================================
+   CAROUSEL 
+   =================================================== */
+.um-reviews-carousel {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  overflow-x: auto; 
+  padding-bottom: 20px; 
+  cursor: grab;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  user-select: none; 
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch; 
 }
 
-.sm-orbit-node:hover .sm-node-image {
-  transform: scale(0);
+.um-reviews-carousel::-webkit-scrollbar {
+  display: none;
 }
 
-.sm-client-name {
-  font-size: 22px;
-  font-weight: bold;
+.um-reviews-carousel:active {
+  cursor: grabbing;
 }
 
-.sm-client-city {
-  font-size: 14px;
-  opacity: 0.8;
+/* ===================================================
+   CARD 
+   =================================================== */
+.um-review-card {
+  flex: 0 0 350px; 
+  background-color: #f7f7f7; 
+  border-radius: 16px; 
+  min-height: 550px; 
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  user-select: none; 
+  -webkit-user-drag: none; 
+  cursor: pointer; 
 }
 
-.sm-node-details p {
-  font-size: 13px;
-  line-height: 1.2;
-  text-align: justify;
-  color: #ffffff;
-}
-
-.sm-client-rating {
-  color: #FFD700 !important; 
-  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); 
-  font-size: 16px; 
-}
-
-.sm-node-overlay {
+/* TOUCH OVERLAY (New) */
+.um-card-touch-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fdfdfd;
-  font-weight: 700;
-  opacity: 0;
-  transition: 0.3s;
+  z-index: 10; /* எல்லா எலிமென்ட்களுக்கும் மேலாக இருக்கும் */
 }
 
-.sm-orbit-node:hover .sm-node-overlay {
-  opacity: 1;
-}
-
-/* =========================================
-   4. BUTTONS
-========================================= */
-.sm-hover-swap-btn {
-  display: inline-flex;
-  align-items: center;
-  background: transparent !important;
-  border: 2px solid #000;
-  padding: 0;
-  cursor: pointer;
-  position: relative;
-  width: 200px !important; 
-  height: 55px;
-  overflow: hidden; 
-  transition: all 0.3s ease;
-  border-radius: 5px;
-  z-index: 5;
-  margin-top: 20px;
-}
-
-.sm-btn-arrow {
+.um-card-thumbnail {
   position: absolute;
+  top: 0;
   left: 0;
-  background: #fff !important;
-  color: #000 !important;
-  width: 55px; 
-  height: 100% !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
-  border-right: 2px solid #000;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
-  z-index: 2;
-}
-
-.sm-btn-label {
   width: 100%;
-  background: #000;
-  color: #fff;
   height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none; 
+}
+
+.um-center-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding-left: 55px; 
-  font-size: 12px;
-  font-weight: 900;
-  white-space: nowrap;
-  letter-spacing: 1px;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  color: #1a1a1a;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  pointer-events: none;
 }
 
-.sm-hover-swap-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.um-review-card:hover .um-center-play-btn {
+  transform: translate(-50%, -50%) scale(1.1); 
+  background-color: #ffffff;
 }
 
-.sm-hover-swap-btn:hover .sm-btn-arrow {
-  background: #f0f0f0 !important;
-  transform: translateX(145px); 
+.um-card-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none; 
 }
 
-.sm-hover-swap-btn:hover .sm-btn-label {
-  transform: translateX(-55px); 
+.video-active {
+  background-color: #000000;
 }
 
-/* =========================================
-   5. RESPONSIVE DESIGN (MEDIA QUERIES)
-========================================= */
+.video-active .um-card-video-bg {
+  opacity: 1; 
+}
 
-/* Tablets / Small Desktops */
+/* ========================================================
+    RESPONSIVE MEDIA QUERIES 
+   ======================================================== */
 @media (max-width: 1024px) {
-  .sm-hover-swap-btn {
-    width: 170px !important; 
-    height: 45px;
+  .um-reviews-section {
+    padding-top:  40px;
   }
-  .sm-btn-arrow {
-    width: 45px;
+  
+  .um-reviews-header h2 {
+    font-size: 2.8rem;
   }
-  .sm-btn-label {
-    font-size: 10px;
-    padding-left: 45px;
-  }
-  .sm-hover-swap-btn:hover .sm-btn-arrow {
-    transform: translateX(125px) !important; 
+
+  .um-review-card {
+    flex: 0 0 320px; 
+    min-height: 500px;
   }
 }
 
-/* Mobile Devices (PHONE VIEW) */
 @media (max-width: 768px) {
-  .sm-core-section {
-    padding: 90px 15px;
-    min-height: auto;
+  .um-reviews-section {
+    padding-top: 20px;
   }
-
-  .sm-orbit-container {
-    width: 420px; 
-    height: 420px;
-  }
-
-  .sm-orbit-ring {
-    width: 420px;
-    height: 420px;
-    animation: orbitRotate 60s linear infinite; 
-  }
-
-  .sm-orbit-node {
-    width: 105px;  
-    height: 75px;  
-    margin-top: -37px; 
-    margin-left: -52px; 
-    transform:
-      rotate(calc(360deg / var(--total) * var(--index)))
-      translate(165px) 
-      rotate(calc(-360deg / var(--total) * var(--index)));
-  }
-
-  .sm-node-stabilizer {
-    animation: counterRotate 60s linear infinite;
-  }
-
-  .sm-center-block {
-    max-width: 240px;
-    transform: scale(0.85);
-  }
-
-  .sm-main-heading {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-
-  /* BIGGER MOBILE CONTENT CARD */
-  .sm-node-details {
-    width: 180px !important; 
-    height: auto !important;
-    padding: 12px !important;
-    bottom: -110px; 
-    background: rgba(0, 0, 0, 0.85) !important; 
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .sm-orbit-node.is-node-active .sm-node-details,
-  .sm-orbit-node:focus-within .sm-node-details {
-    bottom: -15px; 
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .sm-client-name {
-    font-size: 14px !important; 
-    font-weight: bold !important; 
-    margin-bottom: 4px !important;
-    color: #fff !important;
-  }
-
-  .sm-client-city {
-    font-size: 10px;
-  }
-
-  .sm-node-details p {
-    font-size: 10px !important; 
-    line-height: 1.3;
+  
+  .um-reviews-header h2 {
+    font-size: 2rem; 
     text-align: center;
-    margin: 5px 0 0 0 !important;
-  }
-
-  .sm-client-rating {
-    font-size: 12px !important; 
-    margin: 4px 0 !important;
-  }
-
-  .sm-node-overlay {
-    font-size: 10px;
-  }
-
-  /* Button adjustments for Mobile */
-  .sm-hover-swap-btn {
-    width: 150px !important;
-    height: 42px;
-    margin-top: 10px;
   }
   
-  .sm-btn-arrow {
-    width: 42px;
-    font-size: 16px;
-  }
-  
-  .sm-btn-label {
-    font-size: 9px;
-    padding-left: 42px;
-  }
-  
-  .sm-hover-swap-btn:hover .sm-btn-arrow {
-    transform: translateX(108px) !important;
+  .um-review-card {
+    flex: 0 0 85%; 
+    min-width: 280px;
+    min-height: 450px; 
   }
 }
