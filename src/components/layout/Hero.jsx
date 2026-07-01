@@ -5,7 +5,7 @@ import './css/Hero.css';
 import whitetruck from "../../assets/whitetruck.webp";
 import heropagetruck from "../../assets/homepage/MARS-AUTOMOTIVE-DESIGNERS-BANNERS (4).webp";
 import brighttruckbackground from "../../assets/brighttruckbackground.webp";
-import bgVideo from "../../assets/bg-videos.mp4"; 
+import bgVideo from "../../assets/homepage/MARS_AUTOMOTIVE_DESIGNER.mp4"; 
 import playIcon from "../../assets/play.webp";
 import bgMusic from "../../assets/bg-music.mp3";
 import whiteTruck1 from "../../assets/truck (1).webp";

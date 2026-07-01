@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './css/SustainableManufacturing.css';
 
-import reviewVideo1 from '../../assets/bg-videos.mp4';
-import user1 from '../../assets/user1.webp';
-import user2 from '../../assets/user2.webp';
-import user3 from '../../assets/user3.webp';
-import user4 from '../../assets/user4.webp';
-
+import reviewVideo1 from '../../assets/homepage/MARS-Reels (1).mp4';
+import reviewVideo2 from '../../assets/homepage/MARS-Reels (2).mp4';
+import reviewVideo3 from '../../assets/homepage/MARS-Reels (3).mp4';
+import reviewVideo4 from '../../assets/homepage/MARS-Reels (4).mp4';
+import reviewVideo5 from '../../assets/homepage/MARS-Reels (5).mp4';
+import reviewVideo6 from '../../assets/homepage/MARS-Reels (6).mp4';
+import user1 from '../../assets/homepage/MARS-Thumbails.webp';
+import user2 from '../../assets/homepage/MARS-Thumbails_2.webp';
+import user3 from '../../assets/homepage/MARS-Thumbnails_3.webp';
 const UnimaxxReviews = () => {
   const [activeVideoIndex, setActiveVideoIndex] = useState(null);
   
@@ -18,9 +21,11 @@ const UnimaxxReviews = () => {
 
   const initialReviewsData = [
     { id: 1, thumbnailUrl: user1, videoUrl: reviewVideo1 },
-    { id: 2, thumbnailUrl: user2, videoUrl: reviewVideo1 },
-    { id: 3, thumbnailUrl: user3, videoUrl: reviewVideo1 },
-    { id: 4, thumbnailUrl: user4, videoUrl: reviewVideo1 }
+    { id: 2, thumbnailUrl: user2, videoUrl: reviewVideo2 },
+    { id: 3, thumbnailUrl: user3, videoUrl: reviewVideo3 },
+    { id: 4, thumbnailUrl: user1, videoUrl: reviewVideo4 },
+    { id: 5, thumbnailUrl: user2, videoUrl: reviewVideo5 },
+    { id: 6, thumbnailUrl: user3, videoUrl: reviewVideo6 },
   ];
 
   const extendedReviewsData = [...initialReviewsData, ...initialReviewsData];
@@ -130,8 +135,10 @@ const UnimaxxReviews = () => {
   return (
     <div className="um-reviews-master">
       <section className="um-reviews-section">
-        <div className="um-reviews-header">
-          <h2 className='font-serief'>SUSTAINABLE MANUFACTURING</h2>
+      <div className="text-center mb-2 mb-md-5">
+          <h2 className="gallery-main-titles maintit">
+            SUSTAINABLE <br /> MANUFACTURING 
+          </h2>
         </div>
 
         <div
@@ -171,7 +178,6 @@ const UnimaxxReviews = () => {
                   src={review.videoUrl}
                   className="um-card-video-bg"
                   loop
-                  muted
                   playsInline
                   draggable="false"
                 />
