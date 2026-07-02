@@ -4,10 +4,10 @@ import "./css/AboutCertificates.css"
 
 const CertificationSection = () => {
   const certifications = [
-    { name: "TATA Motors", img: "path_to_iso.webp" },
-    { name: "Ashok Leyland", img: "path_to_osha.webp" },
-    { name: "Eicher Motors", img: "path_to_dot.webp" },
-    { name: "Bharat Benz", img: "path_to_sae.webp" }
+    { name: "Light Commercial Vehicles", img: "path_to_iso.webp" },
+    { name: "Medium Duty Vehicles", img: "path_to_osha.webp" },
+    { name: "Heavy Commercial Vehicles", img: "path_to_dot.webp" },
+    { name: "Custom Applications", img: "path_to_sae.webp" }
   ];
 
   return (
@@ -20,7 +20,7 @@ const CertificationSection = () => {
           whileInView={{ opacity: 1 }}
           className="cert-subtitle text-uppercase mb-5 mainsub"
         >
-          Vehicle Brands We Serve
+          Manufacturing Containers for India's <br></br>Leading Commercial Vehicle Brands
         </motion.p>
 
         {/* Logos Grid */}

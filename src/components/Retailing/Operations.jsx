@@ -7,8 +7,8 @@ import {Link } from "react-router-dom";
 
 const CargoSolutions = () => {
   const workflowSteps = [
-    { num: "01", title: "READY-MADE STOCK", desc: "Browse our ready-made truck containers available in multiple sizes, designed to meet immediate transportation and business requirements" },
-    { num: "02", title: "QUICK DELIVERY", desc: "Our retail-based truck containers are ready for dispatch within half a day to one day, helping minimize vehicle downtime and keep business operations running efficiently." },
+    { num: "01", title: "READY MADE STOCK", desc: "Browse our ready made truck containers available in multiple sizes, designed to meet immediate transportation and business requirements" },
+    { num: "02", title: "QUICK DELIVERY", desc: "Our ready made truck containers are ready for dispatch within half a day to one day, helping minimize vehicle downtime and keep business operations running efficiently." },
     { num: "03", title: "CUSTOM MODIFICATION", desc: "Minor modifications and finishing adjustments are completed to ensure the container fits your vehicle and operational requirements perfectly." },
     { num: "04", title: "QUALITY HANDOVER", desc: "Every container undergoes a detailed quality inspection before delivery, ensuring durability, reliability, and readiness for immediate use." }
   ];
@@ -20,13 +20,13 @@ const CargoSolutions = () => {
         {/* ================= TOP HEADER HEADER BLOCK ================= */}
         <div className="text-center cargo-top-header mx-auto mb-5">
           <p className="cargo-mini-badge text-uppercase tracking-widest mt-3 mb-2 inter-font fw-bold mainsub">
-            READY-MADE TRUCK CONTAINER SOLUTIONS 
+            READY MADE TRUCK CONTAINER SOLUTIONS 
           </p>
           <h2 className="cargo-main-headline fw-bold text-uppercase inter-font m-0 inter-font maintit">
-            Retail-Based Truck Containers with Fast Delivery
+            Ready Made Truck Containers with Fast Delivery
           </h2>
           <p className="cargo-top-subdesc mx-auto hanken-grotesk-font fw-normal text-muted mt-2 inter-font maindes">
-            Need a truck container without a long waiting period? Mars Automotive Designers offers retail-based truck containers that are ready for dispatch within half a day to one day, helping businesses minimize downtime and keep their operations moving. Every container is manufactured using quality-tested materials and precision engineering to ensure durability, safety, and dependable performance.
+            Need a truck container without a long waiting period? Mars Automotive Designers offers Ready Made truck containers that are ready for dispatch within half a day to one day, helping businesses minimize downtime and keep their operations moving. Every container is manufactured using quality tested materials and precision engineering to ensure durability, safety, and dependable performance.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const CargoSolutions = () => {
 
           {/* RIGHT COLUMN: CORE VALUES CHECK LIST + CTA CAPSEL BUTTON */}
           <div className="col-12 col-lg-6 cargo-content-engine-col ps-lg-5">
-            <h3 className="why-choose-title fw-bold text-uppercase inter-font mb-3 inter-font mainsub">Why Choose Our Retail Containers?</h3>
+            <h3 className="why-choose-title fw-bold text-uppercase inter-font mb-3 inter-font mainsub">Why Choose Our Ready Made Containers?</h3>
             <p className="why-choose-subtext  text-muted mb-4 inter-font maindes" >
               We build durable truck containers through precision manufacturing and dependable
             </p>
@@ -57,10 +57,10 @@ const CargoSolutions = () => {
                 <span className="check-marker-icon">✓</span> Half a Day to One Day Delivery
               </li>
               <li className="d-flex align-items-center gap-3 inter-font fw-semibold  maindes">
-                <span className="check-marker-icon">✓</span>  Ready-Made Retail Containers
+                <span className="check-marker-icon">✓</span>  Ready Made Containers
               </li>
               <li className="d-flex align-items-center gap-3 inter-font fw-semibold  maindes">
-                <span className="check-marker-icon">✓</span> 7 Feet to 32 Feet Container lengths
+                <span className="check-marker-icon">✓</span> 7 Feet to 12 Feet Container lengths
               </li>
               <li className="d-flex align-items-center gap-3 inter-font fw-semibold  maindes">
                 <span className="check-marker-icon">✓</span> Manufactured for Light & Heavy Commercial Vehicles
@@ -69,7 +69,7 @@ const CargoSolutions = () => {
                 <span className="check-marker-icon">✓</span>Advanced Fabrication Technology
               </li>
               <li className="d-flex align-items-center gap-3 inter-font fw-semibold  maindes">
-                <span className="check-marker-icon">✓</span>Quality-Assured Manufacturing
+                <span className="check-marker-icon">✓</span>Quality Assured Manufacturing
               </li>
             </ul>
 

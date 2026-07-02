@@ -9,10 +9,10 @@ import serviceicon4 from "../../assets/serviceicon4.webp";
 
 const ServiceInfo = () => {
   const infoData = [
-    { id: 1,path:"mars-solutions/manufacturing-excellence-hub" , title: "MANUFACTURING EXCELLENCE", subtitle: "HUB", iconImg: serviceicon1, details: "Precision-built retail and custom truck containers manufactured using advanced fabrication methods, quality materials, and skilled craftsmanship for reliable transportation solutions.", linkText: "Explore On Service", linkSymbol: "↗" },
-    { id: 2, path:"mars-solutions/advanced-machinery-sales",title: "ADVANCED MACHINERY", subtitle: "SALES", iconImg: serviceicon2, details: "Hydraulic press brakes, shearing machines, forming equipment, MIG welding, drilling, cutting, ARC welding, and EOT cranes ensure accurate, efficient manufacturing.",linkText: "Explore Services", linkSymbol: "↗" },
-    { id: 3,path:"mars-solutions/premium-materials-enquiry", title: "PREMIUM MATERIALS", subtitle: "INQUIRY", iconImg: serviceicon3, details: "Quality-tested Tata, Jindal, and JSW sheet metal, JSW structural sections, and Asian Paints coatings ensure strength, durability, and lasting performance.", linkText: "Explore Services", linkSymbol: "↗" },
-    { id: 4,path:"mars-solutions/after-sales-support-hub", title: "AFTER-SALES SUPPORT", subtitle: "HUB", iconImg: serviceicon4, details: "FC assistance, 24×7 bot support, six working-day service, and WhatsApp communication provide dependable after-sales support for every customer.", linkText: "Explore Services", linkSymbol: "↗" },
+    { id: 1,path:"mars-solutions/manufacturing-excellence-hub" , title: "MANUFACTURING EXCELLENCE", subtitle: "", iconImg: serviceicon1, details: "Precision built retail and custom truck containers manufactured using advanced fabrication methods, quality materials, and skilled craftsmanship for reliable transportation solutions.", linkText: "Explore On Service", linkSymbol: "↗" },
+    { id: 2, path:"mars-solutions/advanced-machinery-sales",title: "ADVANCED MACHINERY", subtitle: "", iconImg: serviceicon2, details: "Hydraulic press brakes, shearing machines, forming equipment, MIG welding, drilling, cutting, ARC welding, and EOT cranes ensure accurate, efficient manufacturing.",linkText: "Explore Services", linkSymbol: "↗" },
+    { id: 3,path:"mars-solutions/premium-materials-enquiry", title: "PREMIUM MATERIALS", subtitle: "", iconImg: serviceicon3, details: "Quality tested Tata, Jindal, and JSW sheet metal, JSW structural sections, and Asian Paints coatings ensure strength, durability, and lasting performance.", linkText: "Explore Services", linkSymbol: "↗" },
+    { id: 4,path:"mars-solutions/after-sales-support-hub", title: "AFTER SALES SUPPORT", subtitle: "", iconImg: serviceicon4, details: "FC assistance, 24×7 bot support, six working day service, and WhatsApp communication provide dependable after sales support for every customer.", linkText: "Explore Services", linkSymbol: "↗" },
   ];
 
   return (
