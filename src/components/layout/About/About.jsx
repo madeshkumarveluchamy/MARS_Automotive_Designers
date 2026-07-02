@@ -144,10 +144,7 @@ const About = () => {
           <div className="col-12 col-md-9 ps-lg-5 flex-wrap text-center text-lg-start">
             <p className="homeabouttext-oranges fw-bold mb-md-2 homeaboutmainsub">ABOUT US</p>
             <h2 className="homeaboutabout-heading fw-bold mb-md-4 homeaboutmantit">
-              MARS Automotive Designers, one of the trusted Truck Container
-              Manufacturers in Madurai, builds durable, precision engineered
-              truck containers for light weight, heavy weight, and commercial
-              vehicle applications.
+              MARS Automotive Designers is a trusted Truck Container Manufacturer in Madurai, delivering durable truck containers for commercial vehicles.
             </h2>
             <p className="text-muted homeaboutabout-desc text-center text-lg-start w-100 homeaboutmaindes">
               MARS Automotive Designers specializes in truck container manufacturing,
